@@ -15,6 +15,11 @@ background-color: rgba(4, 6, 8, 0.479);
   font-size: 20px;
   text-align: center;
 }
+center{
+  line-height: 1.5;
+  font-style: italic;
+ 
+}
 .overlayer h1{
   margin-top: 30px;
   margin-bottom: -20px;
