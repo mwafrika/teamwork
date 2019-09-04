@@ -116,7 +116,8 @@ h1{
         display: inline-block;
     }
     #toolbar_phone span {
-        float: right;
+        
         display: inline-block;
+        float: right;
     }
 }
