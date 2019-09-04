@@ -19,8 +19,8 @@ background-color: rgba(4, 6, 8, 0.479);
 }
 .overlayer h2{
   font-size:35px;
-   padding-top: 50px;
-   float:left;
+   padding-top: 70px;
+   /* float:left; */
    margin-left: 50px;
    font-weight: normal;
    font-style: italic;
