@@ -58,6 +58,12 @@ form input {
     padding-top: 10px;
     
 }
+.title1 span p{
+font-size: 16px;
+padding: 0px;
+float: right;
+/* text-align: center; */
+}
 
 .notify {
     width: 50px;
@@ -125,6 +131,58 @@ form input {
 .dropdown {
     position: relative;
     display: inline-block;
+}
+.textuser{
+    font-size: 15px;
+}
+.names p{
+    line-height: .5;
+    margin-left: 2px;
+    text-align: center;
+    font-weight: bolder;
+    color: grey;
+}
+
+.add button{
+    margin-left: 10px;
+    width: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    background:transparent;
+    border: 1px solid rgb(32, 166, 255);
+    color: rgb(32, 166, 255);
+}
+.add img{
+    height: 70px;
+    width: 70px;
+    margin-right:10px;
+    border-radius: 50%;
+}
+#content b{
+    font-size: 20px;
+    text-align: center;
+    margin-left: 50px;
+}
+.menu{
+   display: grid;
+   width: -webkit-fill-available;
+}
+#card-menu{
+    padding: 20px;
+}
+.menu-cont{
+    display: inline-flex;
+}
+.menu-cont img{
+    height: 20px;
+    width: 20px;
+    margin-right: 15px;
+    padding-top: 5px;
+}
+.menu-cont span{
+    font-size: 18px;
+    line-height: 1.5;
+    cursor: pointer;
 }
 .show {
     display: block;
@@ -252,9 +310,9 @@ li a:hover{
     font-family: inherit;
     font-size: 12px;
     margin-bottom: .8em;
+    margin-bottom: 20px;
 }
 .card1 .card-header1 {
-    width: 100%;
     padding: 1.5em 1em;
     display: flex;
     flex-direction: row;
@@ -271,10 +329,10 @@ li a:hover{
 }
 .card3 .card-header3 {
     widows: 100%;
-    padding: 1.5em 1em;
+    padding: -0.5em 1em;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .card1 .card-body1 {
@@ -282,7 +340,15 @@ li a:hover{
     display: flex;
     flex-direction: row;
     padding: .8em;
+    justify-content: center;
+    margin-bottom: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.aside img{
+    width: 65%;
+}
+#aside-menu{
+
 }
 .card2 .card-body2 {
     position: relative;
@@ -296,6 +362,11 @@ li a:hover{
     flex-direction: row;
     padding: .8em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.card3 .align-col{
+    display: grid;
+    /* flex-direction: column; */
+    position: relative;
 }
 .card-footer {
     padding: 5px 1em;
@@ -324,7 +395,12 @@ li a:hover{
 }
 .infos {
     position: relative;
-    width: 60%;
+    width: 100%;
+}
+.separator{
+    width: inherit; 
+    height:30px;
+     border-top: 2px solid black;
 }
 #info {
     width: 100%;
