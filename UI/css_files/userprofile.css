@@ -4,15 +4,56 @@ body {
     /* background-color: #f5f5f5; */
     font-size: 10px;
     -webkit-tap-highlight-color: transparent;
+    font-family: comic Sans MS;
 }
 *{
     box-sizing: border-box;
 }
+#setting{
+    height: 20px;
+    width:20px;
+    
+}
+
 .support {
     display: flex;
     flex-direction: row;
     color: white;
     margin-left: 350px;
+}
+#comment{
+    height:50px;
+    display: flex;
+}
+#comment img{
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    padding:4px;
+}
+#publish1{
+    border: 1px solid grey;
+}
+#freinds{
+    border-radius: 0;
+}
+.inputImg{
+    position: relative;
+}
+.inpt-img{
+    border-radius: 50%;
+    position: absolute;
+    top:10%;
+    left: 80%;
+    display: flex;
+    flex-direction: row;
+    
+}
+#inpt img{
+    height: 25px;
+    width: 25px;
+    margin-top: 8px;
+    margin-right: 0px;
 }
 #social {
     display: inline;
@@ -39,6 +80,8 @@ body {
 form {
     flex-grow: 3;
     position: relative;
+    margin-right: 10px;
+    
 }
 #imgSearch{
     flex-grow: 3;
@@ -104,19 +147,20 @@ float: right;
     margin-right: 10px;
 } */
 .dropbtn {
-    background-color: #3498DB;
     color: white;
     font-size: 16px;
     border: none;
     cursor: pointer;
     width: 160px;
 }
-/* .notify .img1 {
-    height: 30px;
-    width: 30px;
-    margin-top: 15px;
+.dropb{
+    color: white;
+    font-size: 16px;
+    border: none;
     cursor: pointer;
-} */
+    width: 160px; 
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -184,8 +228,8 @@ float: right;
     padding-top: 5px;
 }
 .menu-cont span{
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 17px;
+    line-height: 2;
     cursor: pointer;
 }
 .show {
@@ -227,6 +271,13 @@ width: 100%;
     margin-left: 50px;
     border-radius: 50%;
     margin-top: 10px;
+}
+.logo{
+    width: 30%;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 .profname{
     position: absolute;
@@ -389,6 +440,8 @@ li a:hover{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
 }
 .more{
     padding: 5px 1em;
@@ -466,6 +519,127 @@ li a:hover{
 .status2 h3{
 padding: 0px;
 }
+.display{
+    display: inline-block;
+    position: relative;
+}
 #space{
     margin-bottom: 50px;
 }
+.drop-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.drop{
+  
+    background-color: #3498DB;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 160px;
+}
+.drop-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.drop-content a:hover{
+    background-color: #ddd;
+}
+.myleft{
+    
+}
+
+@media only screen and (max-width:690px){
+    .banner {
+        background-image: url(../images/banner3.jpg);
+        width: 100%;
+        height: 31vh;
+        margin-top: 0%;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-bottom: 1px solid white;
+    }
+}
+@media only screen and (max-width:1540px){
+    #down {
+        background-color: white;
+        transition: margin-left .5s;
+        padding: 30px 40px;
+        width: 90%;
+        border-radius: 5px;
+        margin-left: 50px;
+        margin-right: 50px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+    }
+}
+
+@media only screen and (max-width:778px) {
+   .card3{
+    position: relative;
+    width: 600px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    font-family: inherit;
+    font-size: 12px;
+    margin-bottom: .8em;
+    margin-right: 5px;
+   }
+   .add img {
+    height: 70px;
+    width: 70px;
+    margin-right: 40px;
+    border-radius: 50%;
+    background: 1px solid bblue;
+}
+
+.myleft{
+    display: contents;
+}
+.profilepic {
+    background-image: url(../images/images2.png);
+    height: 154px;
+    width: 154px;
+    position: absolute;
+    top: 17%;
+    left: 1%;
+    border-radius: 50%;
+}
+.profname {
+    position: absolute;
+    top: 24%;
+    left: 25%;
+    font-size: 32px;
+    color: white;
+    font-weight: 2em;
+    line-height: 0;
+    font-weight: lighter;
+}
+
+  }
+  @media only screen and (max-width: 670px){
+    .barmenu{
+        background-size: cover;
+        width: 100%;
+            height: 40px;
+            border: 1px solid;
+            /* position: absolute; */
+            top: 37.2%;
+            display: block;
+            background-color: #34495e;
+            padding-top: 0px;
+        }
+  }  
+
+  
