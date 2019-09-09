@@ -1,9 +1,6 @@
 body{
     margin: 0;
     padding: 0;
-
-    /* font-family: "Lato", sans-serif;
-    transition: background-color .5s; */
 }
 .dropdown{
     position: relative;

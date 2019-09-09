@@ -569,19 +569,25 @@ padding: 0px;
         border-bottom: 1px solid white;
     }
 }
-@media only screen and (max-width:1540px){
-    #down {
-        background-color: white;
-        transition: margin-left .5s;
-        padding: 30px 40px;
-        width: 90%;
-        border-radius: 5px;
-        margin-left: 50px;
-        margin-right: 50px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        /* justify-content: space-between; */
+@media only screen and (max-width:1333px){
+    .profilepic {
+        background-image: url(../images/images2.png);
+        height: 182px;
+        width: 182px;
+        position: absolute;
+        top: 8%;
+        left: 5%;
+        border-radius: 50%;
+    }
+    .profname {
+        position: absolute;
+        top: 25%;
+        left: 3%;
+        font-size: 32px;
+        color: white;
+        font-weight: 2em;
+        line-height: 0;
+        font-weight: lighter;
     }
 }
 
