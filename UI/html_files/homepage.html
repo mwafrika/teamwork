@@ -1,67 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet"  href="../css_files/homepage.css" type="text/css">
-    <link rel="stylesheet" href="../css_files/login.css">
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css_files/homepage.css" type="text/css">
+  <link rel="stylesheet" href="../css_files/login.css">
+</head>
+
 <body>
-    <header id="toolbar" class="myheader">
-     <h1>TeamWork</h1>
-      <div id="switch">
-         <div class="dropdown">
-           <img src="../images/hom.png" alt="home" id="pho_swicth" style=" height:75px;width:75px; border-radius:50%;  margin-right:50px;" >
+  <header id="toolbar" class="myheader">
+    <h1>TeamWork</h1>
+    <div id="switch">
+      <div class="dropdown">
+        <img src="../images/hom.png" alt="home" id="pho_swicth"
+          style=" height:75px;width:75px; border-radius:50%;  margin-right:50px;">
 
-         </div>
+      </div>
+    </div>
+  </header>
+  <!-- header for mobile format -->
+  <header class="myheader" id="toolbar_phone">
+    <h1 style="font-size: 30px;">T-W-K</h1>
+    <span>
+      <div class="dropdown">
+        <img src="../images/hom.png" alt="home" style="height:50px;width:50px; border-radius:50%;  margin-right:20px;">
+      </div>
+    </span>
+  </header>
+  <!-- header for mobile -->
+  <div id="main2">
+    <div class="relative">
+      <img src="../images/programmers.jpg" alt="programmers" style="width:100%;height:783px;">
+      <div class="overlayer">
+        <center>
+          <h1>Welcome to TeamWork</h1><br><br><br>
+          <p>Teamwork is an ​internal social network</p>
+          <p>for organizations’ employees, The goal of this</p>
+          <p>application is to facilitate more interaction</p>
+          <p>between colleagues and facilitate team bonding. </p>
+          <h2><b>Motto:</b> Together we stand divided we fall</h2>
+        </center>
+      </div>
+    </div>
+
+    <div class="myForm">
+      <form class="post_form">
+        <div class="logo"><img src="../images/logo1.png" alt="logo"></div>
+        <p class="label">Login</p>
+        <div class="textFields">
+          <div class="text1"><input type="text" id="clients" placeholder="User Name"></div>
+          <div class="text1"><input type="password" id="passAdmin" placeholder="Password" value=""></div>
         </div>
-    </header>
-     <!-- header for mobile format -->
-     <header class="myheader" id="toolbar_phone">
-       <h1 style="font-size: 30px;">T-W-K</h1>
-       <span>
-         <div class="dropdown">
-           <img src="../images/hom.png" alt="home" style="height:50px;width:50px; border-radius:50%;  margin-right:20px;">
-         </div>
-       </span>
-     </header>
-     <!-- header for mobile -->
-     <div id="main2">
-        <div class="relative">
-            <img src="../images/programmers.jpg" alt="programmers" style="width:100%;height:783px;">
-            <div class="overlayer">
-              <center>
-                 <h1>Welcome to TeamWork</h1><br><br><br>
-                 <p>Teamwork is an ​internal social network</p>
-                 <p>for organizations’ employees, The goal of this</p>
-                 <p>application is to facilitate more interaction</p>
-                 <p>between colleagues and facilitate team bonding. </p>
-                 <h2><b>Motto:</b> Together we stand divided we fall</h2>
-              </center>     
-            </div>   
-          </div>
+        <div id="btn2"></div>
+        <div id="btn">
+          <!-- <button class="btn_post" onclick="checkClient()"> User</button> -->
+          <button class="btn_post"><a href="../Html_files/user_view_all_prop.html"
+              style="color:white;font-size: 18px;">Login</a>
+          </button>
+        </div>
+        <span id="create">don't you have an account ? <a href="../Html_files/signup.html">create one</a></span>
+      </form>
+    </div>
+  </div>
+  <script src="../javascript_files/login.js"></script>
 
-          <div class="myForm">
-            <form class="post_form">
-              <div class="logo"><img src="../images/logo1.png" alt="logo"></div>
-              <p class="label">Login</p>
-              <div class="textFields">
-              <div class="text1"><input type="text" id="clients" placeholder="User Name"></div>
-              <div class="text1"><input type="password" id="passAdmin" placeholder="Password" value=""></div>
-              </div>
-              <div id="btn2"></div>
-              <div id="btn">
-                  <!-- <button class="btn_post" onclick="checkClient()"> User</button> -->
-                  <button class="btn_post"><a href="../Html_files/user_view_all_prop.html" style="color:white;font-size: 18px;">Login</a> </button>
-              </div>
-              <span id="create">don't you have an account ? <a href="../Html_files/signup.html">create one</a></span>
-            </form>
-          </div>
-     </div>
-     <script src="../javascript_files/login.js"></script>
-  
 </body>
-     
+
 </html>

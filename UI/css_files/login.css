@@ -1,31 +1,39 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
-.dropdown{
+
+*:focus {
+    outline: none;
+}
+
+.dropdown {
     position: relative;
     display: inline-block;
 }
-.dropdown a:hover{
+
+.dropdown a:hover {
     background-color: #ddd;
 }
-#switch{
+
+#switch {
     display: inline-flex;
     margin-right: 10px;
 }
+
 ::-webkit-full-screen {
     width: 10px;
 }
 
- ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
- ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #888;
 }
 
- ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 
@@ -44,18 +52,19 @@ body{
     box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
+
 #main2 {
     transition: margin-left .5s;
     padding: 42px 0 0 0;
     display: flex;
     align-content: center;
     justify-content: center;
-   
 }
 
-.relative{
+.relative {
     position: relative;
 }
+
 .relative .overlayer {
     position: absolute;
     top: 0;
@@ -74,25 +83,27 @@ body{
     margin-top: 140px;
     overflow: hidden;
     background-color: #272b2863;
-    /* border-top: 3px solid #2c3e50;
-    border-bottom: 3px solid #2c3e50; */
+    
 }
-h1{
+
+h1 {
     color: white;
     margin-left: 50px;
 }
+
 @media screen and (max-width: 800px) {
     .relative {
         display: none;
     }
-    
     p.label {
         margin: -10px 0px 10px 0px;
     }
 }
-#toolbar_phone{
+
+#toolbar_phone {
     display: none;
 }
+
 @media screen and (max-width: 750px) {
     #toolbar {
         display: none;
@@ -113,21 +124,22 @@ h1{
         display: inline-block;
     }
     #toolbar_phone span {
-        
         display: inline-block;
         float: right;
     }
 }
+
 form {
     position: relative;
     height: 20px;
     width: 400px;
 }
+
 .post_form {
     width: 300px;
     height: 100%;
- 
 }
+
 form input {
     width: 100%;
     height: 20px;
@@ -137,6 +149,7 @@ form input {
     text-align: center;
     border: 0px solid transparent;
 }
+
 .textFields .text1 input {
     text-align: start;
     font-size: 16px;
@@ -145,6 +158,7 @@ form input {
     -webkit-box-shadow: 0 0 3px#888;
     box-shadow: 0 0 3px #888;
 }
+
 p.label {
     font-size: 40px;
     margin: 20px 0px 10px 0px;
@@ -153,27 +167,31 @@ p.label {
     text-align: center;
     color: #2c3e50;
 }
+
 #create {
     margin-top: 20px;
     text-align: center;
     color: cadetblue;
     font-size: 19px;
-    
 }
+
 #btn {
     padding: 20px 40px 15px 15px;
     align-content: center;
     margin-bottom: 30px;
 }
+
 #btn2 {
     padding: 20px 40px 10px 15px;
     align-content: center;
     margin-bottom: -30px;
 }
-a{
-    text-decoration: none; 
+
+a {
+    text-decoration: none;
 }
-.logo img{
+
+.logo img {
     height: 120px;
     width: 120px;
     margin-left: 100px;

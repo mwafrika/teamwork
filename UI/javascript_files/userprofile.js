@@ -23,83 +23,83 @@ var confirm1 = document.getElementById('myBtn1');
 
 
 // to open the first modal
-btn.onclick = function(){
+btn.onclick = function () {
   modal.style.display = 'block';
 }
-span.onclick = function(){
+span.onclick = function () {
   modal.style.display = 'none';
 }
 
-btn1.onclick = function(){
+btn1.onclick = function () {
   modal.style.display = 'block';
 }
-btn2.onclick = function(){
-  modal.style.display ="block";
+btn2.onclick = function () {
+  modal.style.display = "block";
 }
 
-window.onclick = function(event){
-  if(event.target == modal){
+window.onclick = function (event) {
+  if (event.target == modal) {
     modal.style.display = 'none';
   }
-  if(event.target == modal1){
+  if (event.target == modal1) {
     this.modal1.style.display = 'none';
   }
-  if(event.target == this.menu1){
+  if (event.target == this.menu1) {
     this.menu1.style.display = 'none';
   }
 }
 // to open the first modal
-confirm1.onclick = function(){
+confirm1.onclick = function () {
   modal.style.display = 'none';
-  modal1.style.display ='block';
+  modal1.style.display = 'block';
 }
-cloz.onclick = function(){
+cloz.onclick = function () {
   modal1.style.display = 'none';
 }
 
 
 function myFunction() {
-    var menuBox = menu1;   
-    if(menuBox.style.display == "block") { 
-      menuBox.style.display = "none";
-    }
-    else { 
-      menuBox.style.display = "block";
-    }
-   }
-   function function2(){
-     var x = men2;
-     if(x.style.display =="block"){
-       x.style.display ="none";
-     }else{
-       x.style.display = "block";
-     }
-   }
+  var menuBox = menu1;
+  if (menuBox.style.display == "block") {
+    menuBox.style.display = "none";
+  }
+  else {
+    menuBox.style.display = "block";
+  }
+}
+function function2() {
+  var x = men2;
+  if (x.style.display == "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 
-   function myFunction1(){
-     var second = men1;
-     if(second.style.display == "block"){
-       second.style.display = "none";
-     }else{
-       second.style.display = "block";
-     }
-   }
+function myFunction1() {
+  var second = men1;
+  if (second.style.display == "block") {
+    second.style.display = "none";
+  } else {
+    second.style.display = "block";
+  }
+}
 
 
-function settings(){
-    var menuBox = menu2;    
-    if(menuBox.style.display == "block") { 
-      menuBox.style.display = "none";
-    }
-    else { 
-      menuBox.style.display = "block";
-    }
-   }
-   
+function settings() {
+  var menuBox = menu2;
+  if (menuBox.style.display == "block") {
+    menuBox.style.display = "none";
+  }
+  else {
+    menuBox.style.display = "block";
+  }
+}
+
   //  window.onclick = function(event){
-       
+
   //      if(event.target ==  swit){
   //       swit.style.display = 'none';
   //      }
-       
+
   //  }
