@@ -20,12 +20,6 @@ var cloz = document.getElementsByClassName('close1')[0];
 
 var confirm1 = document.getElementById('myBtn1');
 
-
-
-// to open the first modal
-btn.onclick = function () {
-  modal.style.display = 'block';
-}
 span.onclick = function () {
   modal.style.display = 'none';
 }
