@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css_files/view_all_post.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="banner-header">
+
+        <header class="myheader" id="toolbar">
+
+            <div style="display: flex;flex-direction: row;justify-content: space-between; width: 100%;">
+
+                <div style="width:30%; height:inherit;" class="logo">
+                    <img src="../images/logo1.png" />
+                    <img src="../images/hom.png" alt="">
+                    <img src="../images/add-friend.png" alt="" id="freinds">
+                </div>
+
+                <div style="width:33%; height:inherit;" id="bar">
+                    <form autcomplete="off">
+                        <div id="SearchB">
+                            <div id="txtField"><input autocomplete="false" type="text" placeholder="search your freinds"
+                                    id="imgSearch"></div>
+                            <div id="imgField"><img src="../images/search.png" alt="" class="imgSearch"></div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="imgContainer">
+                    <div class="notify" id="alarm">
+                        <img src="../images/facebook-group.png" alt="" class="img1">
+                    </div>
+
+                    <div class="notify" id="heart">
+                        <img src="../images/message.png" alt="" class="img1">
+                    </div>
+                    <div class="notify" id="notification">
+                        <img src="../images/notification.png" alt="">
+                    </div>
+
+                    <div id="switch" class="notify">
+                        <div class="dropdown">
+                            <img src="../images/user.png" id="pho_swicth"
+                                style="height:30px;width:30px; border-radius:50%;" onclick="DropDown()" class="dropbtn">
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="#agent" id="agent">Profile</a>
+                                <a href="#user" id="user">Settings</a>
+                                <a href="#logout" id="logout">Logout</a>
+                            </div>
+                            <!-- </img> -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+    </div>
+
+    <div class="main_div">
+
+        <div id="left-side" class="myleft">
+            <div class="card1" id="left-card">
+
+                <div class="card-body1 aside">
+                    <img src="../images/logo1.png" alt="">
+                </div>
+
+            </div>
+
+            <div class="card1" id="left-card">
+                <div class="card-header1">
+                    <div class="status">
+                        <span class="status-content" id="content"><b>Available menu</b></span>
+                    </div>
+                </div>
+
+                <div class="card-body1" id="card-menu">
+
+                    <div class="menu" id="aside-menu">
+                        <div class="menu-cont">
+                            <div class="img-menu">
+                                <img src="../images/search1.png" alt="">
+                            </div>
+                            <div><span>Find more employes</span> </div>
+                        </div>
+                        <div class="menu-cont">
+                            <div class="img-menu">
+                                <img src="../images/event.png" alt="">
+                            </div>
+                            <div><span>See events</span> </div>
+                        </div>
+                        <div class="menu-cont">
+                            <div class="img-menu">
+                                <img src="../images/employeegroup.png" alt="">
+                            </div>
+                            <div><span>See Emplyees group</span> </div>
+                        </div>
+                        <div class="menu-cont">
+                            <div class="img-menu">
+                                <img src="../images/calendar.png" alt="">
+                            </div>
+                            <div><span>See weekly schedule</span> </div>
+                        </div>
+                        <div class="menu-cont">
+                            <div class="img-menu">
+                                <img src="../images/conference.png" alt="">
+                            </div>
+                            <div><span>Attend online meeting</span> </div>
+                        </div>
+                        <div class="menu-cont">
+                            <div class="img-menu">
+                                <img src="../images/newspaper.png" alt="">
+                            </div>
+                            <div><span>Send your standups</span> </div>
+                        </div>
+                        <div class="menu-cont">
+                            <div class="img-menu">
+                                <img src="../images/check-list.png" alt="">
+                            </div>
+                            <div><span>Monthly Assessement</span> </div>
+                        </div>
+                        <div class="menu-cont">
+                            <div class="img-menu">
+                                <img src="../images/attendance.png" alt="">
+                            </div>
+                            <div><span>Confirm attence time</span> </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <div id="down"> -->
+
+        <div id="post-element">
+            <div class="card2" id="space">
+                <div class="card-header2" id="pub">
+                    <div class="status2">
+                        <h3 style="margin-left: 120px;">Let's share information with collegues</h3>
+                    </div>
+
+                </div>
+                <div class="card-body2" id="bodyShare">
+                    <img src="../images/user.png" alt=""
+                        style="height: 50px;height:50px; border-radius:50%;padding:4px;">
+                    <form action="" method="post">
+                        <input type="text" placeholder="what's in your mind ?" id="publish">
+                    </form>
+                </div>
+
+                <div class="card-footer2">
+
+                    <div>
+                        <img src="../images/picture (1).png" alt="" style="height:20px;width:20px;margin-right: 10px;">
+                        <img src="../images/attachment.png" alt="" style="height: 20px;width:20px;margin-right: 10px;">
+                        <img src="../images/google-drive.png" alt="" style="height: 20px;width:20px;">
+                    </div>
+
+                    <img src="../images/share.png" alt="" style="height: 20px;width:20px;margin-right: 20px;">
+                </div>
+            </div>
+
+            <div class="card2" id="cart">
+                <div class="card-header2">
+                    <div class="status2" onclick="window.open('../html_files/userprofile.html','_self');" srcset=""
+                        style="width:100%; height:100%; cursor:pointer; display: inherit;">
+
+                        <div>
+                            <span><img src="../images/user.png" alt=""
+                                    style="height: 30px;width:30px; border-radius:50%;margin-right: 10px;"></span>
+                        </div>
+                        <div class="textuser">
+                            <div class="timer">
+                                <span><b>Mwafrika Josue</b></span>
+                                <span><b>10min ago</b></span><br>
+                            </div>
+                            <span class="status-content" id="status-content">Oh My God! Help me to this last challenge
+                                Oh My God! Help </span>
+                            <span class="status-content" id="status-content">Oh My God! Help me to this last
+                                challenge</span>
+                            <span class="status-content" id="status-content">Oh My God! Help me to this last
+                                challenge</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dropdown" id="menu-container">
+                        <img src="../images/nut-icon.png " class="dropb" id="pho_swicth"
+                            style="height:20px;width:20px; border-radius:50%;" onclick="myFunction()">
+                        <div id="drp" class="drop-content">
+                            <a href="#" id="openModal">Edit post</a>
+                            <a href="#" id="deletePost">Delete post</a>
+                        </div>
+                        </img>
+                    </div>
+
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+
+                            <!-- edit modal -->
+                            <div class="carte" id="space1">
+                                <span class="close">&times;</span>
+                                <div class="card-header2" id="pub">
+                                    <div class="status2">
+                                        <h3 style="margin-left: 120px;">Let's share information with collegues</h3>
+                                    </div>
+
+                                </div>
+                                <div class="card-body2" id="bodyShare">
+                                    <img src="../images/user.png" alt=""
+                                        style="height: 50px;height:50px; border-radius:50%;padding:4px;">
+                                    <form action="" method="post">
+                                        <input type="text" placeholder="" id="publish"
+                                            value=" What does this PR do ? finish to write test for flag to ensure that all features ">`
+                                    </form>
+                                </div>
+
+                                <div class="card-footer2">
+
+                                    <div>
+                                        <img src="../images/picture (1).png" alt=""
+                                            style="height:20px;width:20px;margin-right: 10px;">
+                                        <img src="../images/attachment.png" alt=""
+                                            style="height: 20px;width:20px;margin-right: 10px;">
+                                        <img src="../images/google-drive.png" alt="" style="height: 20px;width:20px;">
+                                    </div>
+                                    <button class="approve" id="myBtn1"><b>Update Post</b> </button>
+                                    <div> <img src="../images/share.png" alt=""
+                                            style="height: 20px;width:20px;margin-right: 20px;"></div>
+                                </div>
+
+                            </div>
+                            <!--edit modal -->
+
+
+                        </div>
+                    </div>
+
+                    <!-- delete the post -->
+
+                    <div id="modalDelete" class="modal">
+                        <div class="modal-content">
+
+                            <!-- edit modal -->
+                            <div class="carte" id="space1">
+                                <span class="close">&times;</span>
+                                <div class="card-header2" id="pub">
+                                    <div class="status2">
+                                        <h3 style="margin-left: 120px;">Let's share information with collegues</h3>
+                                    </div>
+
+                                </div>
+                                <div class="card-body2" id="bodyShare">
+                                    <img src="../images/user.png" alt=""
+                                        style="height: 50px;height:50px; border-radius:50%;padding:4px;">
+                                    <form action="" method="post">
+                                        <input type="text" placeholder="" id="publish"
+                                            value=" What does this PR do ? finish to write test for flag to ensure that all features ">`
+                                    </form>
+                                </div>
+
+                                <div class="card-footer2">
+
+                                    <div>
+                                        <img src="../images/picture (1).png" alt=""
+                                            style="height:20px;width:20px;margin-right: 10px;">
+                                        <img src="../images/attachment.png" alt=""
+                                            style="height: 20px;width:20px;margin-right: 10px;">
+                                        <img src="../images/google-drive.png" alt="" style="height: 20px;width:20px;">
+                                    </div>
+                                    <button class="approve" id="btnDel"><b>Update Post</b> </button>
+                                    <div> <img src="../images/share.png" alt=""
+                                            style="height: 20px;width:20px;margin-right: 20px;"></div>
+                                </div>
+
+                            </div>
+                            <!--edit modal -->
+
+
+                        </div>
+                    </div>
+
+                    <!-- delete the post -->
+                    <!-- confirm update -->
+                    <div id="myModal2" class="modal1">
+
+                        <div class="modal-content4">
+                            <span class="close2">&times;</span>
+                            <p>Are you sure to delete this Post ?</p>
+                            <button class="approve1" id="btnDel"><b>Confirm deletion</b> </button>
+                        </div>
+                    </div>
+                    <!-- confirm update-->
+
+                </div>
+                <div class="card-body2">
+                    <div class="client">
+
+                        <img src="../images/micro2.jpg" alt="mon villa"
+                            onclick="window.open('../html_files/View_specific_post.html','_self');" srcset=""
+                            style="width:100%; height:100%; cursor:pointer;" />
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div>
+                        <img src="../images/like.png" alt="" style="height: 20px;width:20px;">
+                        <img src="../images/heart.png" alt="" style="height: 20px;width:20px;">
+                        <img src="../images/happiness.png" alt="" style="height: 20px;width:20px;">
+                    </div>
+
+                    <div>
+                        <img src="../images/comments.png" alt="" style="height: 20px;width:20px;">
+                        <img src="../images/share.png" alt="" style="height: 20px;width:20px;">
+                    </div>
+                </div>
+                <div class="myComment">
+                    <img src="../images/mwa1.jpg" alt="">
+                    <div class="typecomment"><a href="#">Mwafrika Mufungizi</a>Cool man!!! congratulations bro</div>
+                </div>
+                <div class="suggest"><a href="#">Like. Reply</a>1h</div>
+
+                <div class="myComment1">
+                    <img src="../images/prof4.jpg" alt="">
+                    <div class="typecomment1"><a href="#">Joel mbavu moya replied .2 Replies</a></div>
+                </div>
+                <div class="myComment">
+                    <img src="../images/prof6.jpg" alt="">
+                    <div class="typecomment"><a href="#">Jospin Mujinga</a>cool keep on working hard but you should also
+                        learn to be quiet</div>
+                </div>
+                <div class="suggest"><a href="#">Like. Reply</a>1d</div>
+                <div class="myComment">
+                    <img src="../images/prof2.jpg" alt="">
+                    <div class="typecomment"><a href="#">Kassamotto Lukinga</a>Great bro! nice job you should invite me
+                        too to participate to the meeting</div>
+                </div>
+                <div class="suggest"><a href="#">Like. Reply</a>1d</div>
+
+                <div id="comment">
+                    <img src="../images/user.png" alt="">
+                    <form action="" method="post">
+                        <div class="inputImg">
+                            <input type="text" placeholder="Type your comment ..." id="publish1">
+                        </div>
+                        <div class="inpt-img" id="inpt">
+                            <img src="../images/happiness.png" alt="">
+                            <img src="../images/toff.png" alt="">
+                            <img src="../images/sticker.png" alt="">
+                            <img src="../images/gif.png" alt="">
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+
+            <div class="card2">
+                <div class="card-header2">
+                    <div class="status2" onclick="window.open('../html_files/userprofile.html','_self');" srcset=""
+                        style="width:100%; height:100%; cursor:pointer; display: inherit;">
+                        <div>
+                            <span><img src="../images/user.png" alt=""
+                                    style="height: 30px;width:30px; border-radius:50%;margin-right: 10px;"></span>
+                        </div>
+                        <div class="textuser">
+                            <div class="timer">
+                                <span><b>Michel Zaiko</b></span>
+                                <span><b>5 hours ago</b></span><br>
+                            </div>
+                            <span class="status-content" id="status-content">Oh My God! Help me to this last challenge
+                                Oh My God! Help </span>
+                            <span class="status-content" id="status-content">Oh My God! Help me to this last
+                                challenge</span>
+                            <span class="status-content" id="status-content">Oh My God! Help me to this last
+                                challenge</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dropdown" id="menu-container">
+                        <img src="../images/nut-icon.png " class="dropb" id="pho_swicth"
+                            style="height:20px;width:20px; border-radius:50%;" onclick="myFunction1()">
+                        <div id="drp1" class="drop-content">
+                            <a href="#" id="myBut">Edit post</a>
+                            <a href="#">Delete post</a>
+                        </div>
+                        </img>
+                    </div>
+
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+
+                            <!-- edit modal -->
+                            <div class="carte" id="space1">
+                                <span class="close">&times;</span>
+                                <div class="card-header2" id="pub">
+                                    <div class="status2">
+                                        <h3 style="margin-left: 120px;">Let's share information with collegues</h3>
+                                    </div>
+
+                                </div>
+                                <div class="card-body2" id="bodyShare">
+                                    <img src="../images/user.png" alt=""
+                                        style="height: 50px;height:50px; border-radius:50%;padding:4px;">
+                                    <form action="" method="post">
+                                        <input autocomplete="off" name="q" type="text" placeholder="" id="publish"
+                                            value=" What does this PR do ? finish to write test for flag to ensure that all features ">
+                                    </form>
+                                </div>
+
+                                <div class="card-footer2">
+
+                                    <div>
+                                        <img src="../images/picture (1).png" alt=""
+                                            style="height:20px;width:20px;margin-right: 10px;">
+                                        <img src="../images/attachment.png" alt=""
+                                            style="height: 20px;width:20px;margin-right: 10px;">
+                                        <img src="../images/google-drive.png" alt="" style="height: 20px;width:20px;">
+                                    </div>
+                                    <button class="approve" id="myBtn1"><b>Update Post</b> </button>
+                                    <div> <img src="../images/share.png" alt=""
+                                            style="height: 20px;width:20px;margin-right: 20px;"></div>
+                                </div>
+                            </div>
+                            <!--edit modal -->
+
+
+                        </div>
+                    </div>
+
+
+                    <!-- confirm update -->
+                    <div id="myModal1" class="modal1">
+
+                        <div class="modal-content">
+                            <span class="close1">&times;</span>
+                            <p>Post successfully updated</p>
+                        </div>
+                    </div>
+                    <!-- confirm update-->
+
+                </div>
+                <div class="card-body2">
+                    <div class="client">
+
+                        <img src="../images/programmers.jpg" alt="mon villa"
+                            onclick="window.open('../html_files/View_specific_post.html','_self');" srcset=""
+                            style="width:100%; height:100%; cursor:pointer;" />
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div>
+                        <img src="../images/like.png" alt="" style="height: 20px;width:20px;">
+                        <img src="../images/heart.png" alt="" style="height: 20px;width:20px;">
+                        <img src="../images/happiness.png" alt="" style="height: 20px;width:20px;">
+                    </div>
+
+                    <div>
+                        <img src="../images/comments.png" alt="" style="height: 20px;width:20px;">
+                        <img src="../images/share.png" alt="" style="height: 20px;width:20px;">
+                    </div>
+                </div>
+
+                <div class="myComment">
+                    <img src="../images/mwa1.jpg" alt="">
+                    <div class="typecomment"><a href="#">Mwafrika Mufungizi</a>Ohh am so proud of you my freinds</div>
+                </div>
+                <div class="suggest"><a href="#">Like. Reply</a>1h</div>
+
+                <div class="myComment1">
+                    <img src="../images/prof1.jpg" alt="">
+                    <div class="typecomment1"><a href="#">Joel mbavu moya replied .2 Replies</a></div>
+                </div>
+                <div class="myComment">
+                    <img src="../images/micro5.jpg" alt="">
+                    <div class="typecomment"><a href="#">Jackson Biringanine</a>I am so happy when i see young people
+                        working together</div>
+                </div>
+                <div class="suggest"><a href="#">Like. Reply</a>1d</div>
+                <div class="myComment">
+                    <img src="../images/micro4.jpg" alt="">
+                    <div class="typecomment"><a href="#">Tokyo Jeen</a>Great job freinds!!! please remind me when you
+                        are done</div>
+                </div>
+                <div class="suggest"><a href="#">Like. Reply</a>1d</div>
+
+                <div id="comment">
+                    <img src="../images/user.png" alt="">
+                    <form action="" method="post">
+                        <div class="inputImg">
+                            <input type="text" placeholder="Type your comment ..." id="publish1">
+                        </div>
+                        <div class="inpt-img" id="inpt">
+                            <img src="../images/happiness.png" alt="">
+                            <img src="../images/toff.png" alt="">
+                            <img src="../images/sticker.png" alt="">
+                            <img src="../images/gif.png" alt="">
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="card2">
+                <div class="card-header2">
+                    <div class="status2" onclick="window.open('../html_files/userprofile.html','_self');" srcset=""
+                        style="width:100%; height:100%; cursor:pointer; display: inherit;">
+
+                        <div>
+                            <span><img src="../images/user.png" alt=""
+                                    style="height: 30px;width:30px; border-radius:50%;margin-right: 10px;"></span>
+                        </div>
+                        <div class="textuser">
+                            <div class="timer">
+                                <span><b>Goliath izabelle</b></span>
+                                <span><b>2 days ago</b></span><br>
+                            </div>
+                            <span class="status-content" id="status-content">Oh My God! Help me to this last challenge
+                                Oh My God! Help </span>
+                            <span class="status-content" id="status-content">Oh My God! Help me to this last
+                                challenge</span>
+                            <span class="status-content" id="status-content">Oh My God! Help me to this last
+                                challenge</span>
+                        </div>
+
+                    </div>
+                    <div class="dropdown" id="menu-container">
+                        <img src="../images/nut-icon.png " class="dropb" id="pho_swicth"
+                            style="height:20px;width:20px; border-radius:50%;" onclick="function2()">
+                        <div id="drp2" class="drop-content">
+                            <a href="#" id="myBut1">Edit post</a>
+                            <a href="#">Delete post</a>
+                        </div>
+                        </img>
+                    </div>
+                    <div id="myModal1" class="modal">
+                        <div class="modal-content">
+
+                            <!-- edit modal -->
+                            <div class="carte" id="space1">
+                                <span class="close">&times;</span>
+                                <div class="card-header2" id="pub">
+                                    <div class="status2">
+                                        <h3 style="margin-left: 120px;">Let's share information with collegues</h3>
+                                    </div>
+
+                                </div>
+                                <div class="card-body2" id="bodyShare">
+                                    <img src="../images/user.png" alt=""
+                                        style="height: 50px;height:50px; border-radius:50%;padding:4px;">
+                                    <form action="" method="post">
+                                        ` <input type="text" placeholder="" id="publish"
+                                            value=" What does this PR do ? finish to write test for flag to ensure that all features ">`
+                                    </form>
+                                </div>
+
+                                <div class="card-footer2">
+
+                                    <div>
+                                        <img src="../images/picture (1).png" alt=""
+                                            style="height:20px;width:20px;margin-right: 10px;">
+                                        <img src="../images/attachment.png" alt=""
+                                            style="height: 20px;width:20px;margin-right: 10px;">
+                                        <img src="../images/google-drive.png" alt="" style="height: 20px;width:20px;">
+                                    </div>
+                                    <button class="approve" id="myBtn1"><b>Update Post</b> </button>
+                                    <div> <img src="../images/share.png" alt=""
+                                            style="height: 20px;width:20px;margin-right: 20px;"></div>
+                                </div>
+                            </div>
+                            <!--edit modal -->
+
+
+                        </div>
+                    </div>
+
+
+                    <!-- confirm update -->
+                    <div id="myModal1" class="modal1">
+
+                        <div class="modal-content">
+                            <span class="close1">&times;</span>
+                            <p>Post successfully updated</p>
+                        </div>
+                    </div>
+                    <!-- confirm update-->
+
+                </div>
+                <div class="card-body2">
+                    <div class="client">
+
+                        <img src="../images/logo.png" alt="mon villa"
+                            onclick="window.open('../html_files/View_specific_post.html','_self');" srcset=""
+                            style="width:100%; height:100%; cursor:pointer;" />
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div>
+                        <img src="../images/like.png" alt="" style="height: 20px;width:20px;">
+                        <img src="../images/heart.png" alt="" style="height: 20px;width:20px;">
+                        <img src="../images/happiness.png" alt="" style="height: 20px;width:20px;">
+                    </div>
+
+                    <div>
+                        <img src="../images/comments.png" alt="" style="height: 20px;width:20px;">
+                        <img src="../images/share.png" alt="" style="height: 20px;width:20px;">
+                    </div>
+                </div>
+                <div class="myComment">
+                    <img src="../images/micro2.jpg" alt="">
+                    <div class="typecomment"><a href="#">Kulondwa Chekanabo</a>Together we stand, divided we fall</div>
+                </div>
+                <div class="suggest"><a href="#">Like. Reply</a>1h</div>
+
+                <div class="myComment1">
+                    <img src="../images/micro1.jpg" alt="">
+                    <div class="typecomment1"><a href="#">Joel mbavu moya replied .2 Replies</a></div>
+                </div>
+                <div class="myComment">
+                    <img src="../images/images1.jpg" alt="">
+                    <div class="typecomment"><a href="#">Lucky Dube</a>I remember my song when i was still alive: one
+                        love</div>
+                </div>
+                <div class="suggest"><a href="#">Like. Reply</a>1d</div>
+                <div class="myComment">
+                    <img src="../images/images2.png" alt="">
+                    <div class="typecomment"><a href="#">Marie Misamu</a>Eza nini boye na ba anglais Milayi milayi</div>
+                </div>
+                <div class="suggest"><a href="#">Like. Reply</a>1d</div>
+
+                <div id="comment">
+                    <img src="../images/user.png" alt="">
+                    <form action="" method="post">
+                        <div class="inputImg">
+                            <input type="text" placeholder="Type your comment ..." id="publish1">
+                        </div>
+                        <div class="inpt-img" id="inpt">
+                            <img src="../images/happiness.png" alt="">
+                            <img src="../images/toff.png" alt="">
+                            <img src="../images/sticker.png" alt="">
+                            <img src="../images/gif.png" alt="">
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <button class="approve1" id="myBtn1"><b>View more posts</b></button>
+        </div>
+
+        <div id="right-side">
+            <div class="card3">
+                <div class="card-header3">
+                    <div class="status title1">
+                        <span class="status-content" id="status-content1"><b>
+                                <p>Find People you may know</p>
+                            </b> </span>
+                    </div>
+                </div>
+                <div class="card-body3">
+                    <div class="add">
+                        <img src="../images/prof6.jpg" alt="">
+                        <div class="names">
+                            <p>Akonkwa</p>
+                        </div>
+                        <div class="names">
+                            <p>Mudekereza</p>
+                        </div>
+                        <button><b>Add</b> </button>
+                    </div>
+                    <div class="add">
+                        <img src="../images/prof2.jpg" alt="">
+                        <div class="names">
+                            <p>Kulimushi</p>
+                        </div>
+                        <div class="names">
+                            <p>Mutoka mbali</p>
+                        </div>
+                        <button><b>Add</b> </button>
+                    </div>
+                    <div class="add">
+                        <img src="../images/prof4.jpg" alt="">
+                        <div class="names">
+                            <p> Chakupewa</p>
+                        </div>
+                        <div class="names">
+                            <p>Lushombo</p>
+                        </div>
+                        <button><b>Add</b> </button>
+                    </div>
+                    <div class="add">
+                        <img src="../images/images2.png" alt="">
+                        <div class="names">
+                            <p>Mulomoderwa</p>
+                        </div>
+                        <div class="names">
+                            <p>Manegabe</p>
+                        </div>
+                        <button><b>Add</b> </button>
+                    </div>
+                    <div class="add">
+                        <img src="../images/prof3.jpg" alt="">
+                        <div class="names">
+                            <p>Ponga</p>
+                        </div>
+                        <div class="names">
+                            <p>Kyalondawa</p>
+                        </div>
+                        <button><b>Add</b> </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card3">
+                <div class="card-header3">
+                    <div class="status title1">
+                        <span class="status-content" id="status-content1"><b>
+                                <p>People online</p>
+                            </b> </span>
+                    </div>
+                </div>
+                <div class="card-body3" id="people">
+                    <div class="add bord">
+                        <img src="../images/prof6.jpg" alt="">
+                        <div></div>
+                        <div class="names" style="margin: 20px 7px 10px 10px;">
+                            <p>Akonkwa</p>
+                        </div>
+                        <div class="names" style="margin: 20px 110px 10px 10px;">
+                            <p>Mudekereza</p>
+                        </div>
+                        <div class="online" style="margin: 30px 7px 10px 10px;"></div>
+                    </div>
+                    <div class="add bord">
+                        <img src="../images/images1.jpg" alt="">
+                        <div class="names" style="margin: 20px 7px 10px 10px;">
+                            <p>Balibuno</p>
+                        </div>
+                        <div class="names" style="margin: 20px 142px 10px 10px;">
+                            <p>Charles</p>
+                        </div>
+                        <div class="online" style="margin: 30px 7px 10px 10px;"></div>
+                    </div>
+                    <div class="add bord">
+                        <img src="../images/micro1.jpg" alt="">
+                        <div class="names" style="margin: 20px 7px 10px 10px;">
+                            <p>Bashombana</p>
+                        </div>
+                        <div class="names" style="margin: 20px 117px 10px 10px;">
+                            <p>Bisimwa</p>
+                        </div>
+                        <div class="online" style="margin: 30px 7px 10px 10px;"></div>
+                    </div>
+                    <div class="add bord">
+                        <img src="../images/mwa1.jpg" alt="">
+                        <div class="names" style="margin: 20px 7px 10px 10px;">
+                            <p>Shabalanzire</p>
+                        </div>
+                        <div class="names" style="margin: 20px 103px 10px 10px;">
+                            <p>Godefroid</p>
+                        </div>
+                        <div class="online" style="margin: 30px 7px 10px 10px;"></div>
+                    </div>
+                    <div class="add bord">
+                        <img src="../images/micro2.jpg" alt="">
+                        <div class="names" style="margin: 20px 7px 10px 10px;">
+                            <p>Malwede</p>
+                        </div>
+                        <div class="names" style="margin: 20px 115px 10px 10px;">
+                            <p>Kalimwabene</p>
+                        </div>
+                        <div class="online" style="margin: 30px 7px 10px 10px;"></div>
+                    </div>
+                    <div class="add bord">
+                        <img src="../images/images2.png" alt="">
+                        <div class="names" style="margin: 20px 7px 10px 10px;">
+                            <p>Akonkwa</p>
+                        </div>
+                        <div class="names" style="margin: 20px 117px 10px 10px;">
+                            <p>Mudekereza</p>
+                        </div>
+                        <div class="online" style="margin: 30px 7px 10px 10px;"></div>
+                    </div>
+                    <div class="add bord">
+                        <img src="../images/micro5.jpg" alt="">
+                        <div class="names" style="margin: 20px 7px 10px 10px;">
+                            <p>Kazungu</p>
+                        </div>
+                        <div class="names" style="margin: 20px 142px 10px 10px;">
+                            <p>Mulumee</p>
+                        </div>
+                        <div class="online" style="margin: 30px 7px 10px 10px;"></div>
+                    </div>
+                    <div class="add bord">
+                        <img src="../images/prof1.jpg" alt="">
+                        <div class="names" style="margin: 20px 7px 10px 10px;">
+                            <p>Kasinyabo</p>
+                        </div>
+                        <div class="names" style="margin: 20px 129px 10px 10px;">
+                            <p>Badesire</p>
+                        </div>
+                        <div class="online" style="margin: 30px 7px 10px 10px;"></div>
+                    </div>
+                    <div class="add bord">
+                        <img src="../images/prof2.jpg" alt="">
+                        <div class="names" style="margin: 20px 7px 10px 10px;">
+                            <p>Bishikwabo</p>
+                        </div>
+                        <div class="names" style="margin: 20px 123px 10px 10px;">
+                            <p>saa mbili</p>
+                        </div>
+                        <div class="online" style="margin: 30px 7px 10px 10px;"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card3">
+                <div class="card-header3">
+                    <div class="status title1">
+                        <span class="status-content" id="status-content1">
+                            <p>
+                                <p>You may be interested in our Articles</p>
+                            </p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body3 align-col">
+                    <div class="first-element">
+                        <div class="client">
+
+                            <img src="../images/micro3.jpg" alt="mon villa"
+                                style="width:100%; height:100%; cursor:pointer;" />
+
+                        </div>
+                        <div class="infos">
+                            <div>
+                                <img src="../images/heart.png" alt="mon villa" srcset="" id="love" />
+                            </div>
+
+                            <div id="info">
+                                <div>
+                                    <b>Details :</b> Java Programming course
+                                </div>
+                                <div>
+                                    <b> Post Date :</b> 12/02/2019
+                                </div>
+                                <div>
+                                    <b>Website :</b> <span class="bolder"> W3School </span>
+                                </div>
+                                <div>
+                                    <b>Price :</b>100.99 $
+                                </div>
+                                <div>
+                                    <b>Author :</b>Mwafrika Mufungizi Josue
+                                </div>
+                                <div>
+                                    <b>Phone :</b> <span class="bolder"> (+250) 787564203 </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="separator"></div>
+                        <div class="social">
+                            <p style="font-size: 18px;">social Articles</p>
+                        </div>
+                        <div class="client">
+
+                            <img src="../images/team11.png" alt="mon villa" srcset=""
+                                style="width:100%; height:100%; cursor:pointer;" id />
+
+                        </div>
+                        <div class="infos">
+                            <div>
+                                <img src="../images/heart.png" alt="mon villa" srcset="" id="love" />
+                            </div>
+
+                            <div id="info">
+                                <div>
+                                    <b>Details :</b> Java Programming course
+                                </div>
+                                <div>
+                                    <b> Post Date :</b> 12/02/2019
+                                </div>
+                                <div>
+                                    <b>Website :</b> <span class="bolder"> W3School </span>
+                                </div>
+                                <div>
+                                    <b>Price :</b>100.99 $
+                                </div>
+                                <div>
+                                    <b>Author :</b>Mwafrika Mufungizi Josue
+                                </div>
+                                <div>
+                                    <b>Phone :</b> <span class="bolder"> (+250) 787564203 </span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="card-footer more">
+                    <button class="approve" id="myBtn"><b>View more articles</b> </button>
+
+                </div>
+            </div>
+
+            <div class="card3">
+                <div class="card-header3">
+                    <div class="status">
+
+                        <span class="status-content" id="status-content1" style="font-size: 14px;"><b>Education
+                                Articles</b> </span>
+                    </div>
+                </div>
+                <div class="card-body3">
+                    <div class="client">
+
+                        <img src="../images/team4.jpg" alt="mon villa" srcset=""
+                            style="width:100%; height:100%; cursor:pointer;" id />
+
+                    </div>
+                    <div class="infos">
+                        <div>
+                            <img src="../images/heart.png" alt="mon villa" srcset="" id="love" />
+                        </div>
+
+                        <div id="info">
+                            <div>
+                                <b>Details :</b> Java Programming course
+                            </div>
+                            <div>
+                                <b> Post Date :</b> 12/02/2019
+                            </div>
+                            <div>
+                                <b>Website :</b> <span class="bolder"> W3School </span>
+                            </div>
+                            <div>
+                                <b>Price :</b>100.99 $
+                            </div>
+                            <div>
+                                <b>Author :</b>Mwafrika Mufungizi Josue
+                            </div>
+                            <div>
+                                <b>Phone :</b> <span class="bolder"> (+250) 787564203 </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer" id="lastbtn">
+                    <button class="approve" id="Btn">View more recently published</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../javascript_files/view_all_post.js"></script>
+</body>
+
+</html>
