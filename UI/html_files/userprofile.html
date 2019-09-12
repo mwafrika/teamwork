@@ -49,7 +49,7 @@
                     <div id="switch" class="notify">
                         <div class="dropdown" id="dropdown2">
                             <img src="../images/user.png" id="pho_swicth"
-                                style="height:30px;width:30px; border-radius:50%;" onclick="settings()" class="dropbtn">
+                                style="height:30px;width:30px; border-radius:50%;" onclick="DropDown()" class="dropbtn">
                             <div id="myDropdown" class="dropdown-content">
                                 <a href="#agent" id="agent">Profile</a>
                                 <a href="#user" id="user">Settings</a>
@@ -192,18 +192,20 @@
                 </div>
             </div>
 
-            <div class="card2">
+            <div class="card2" id="card1">
                 <div class="card-header2">
-                    <div class="status2" style="display: inherit;">
+                    <div class="status2" onclick="window.open('../html_files/userprofile.html','_self');" srcset=""
+                        style="width:100%; height:100%; cursor:pointer; display: inherit;">
 
                         <div>
                             <span><img src="../images/user.png" alt=""
                                     style="height: 30px;width:30px; border-radius:50%;margin-right: 10px;"></span>
                         </div>
-                        <div class="textuser" style="display:grid;">
-                            <span class="status-content" id="status-content1"><b>Mwafrika Josue</b></span>
-                            <span class="status-content" id="status-content1"
-                                style="font-family: comic Sans MS;"><b>10min ago</b></span><br>
+                        <div class="textuser">
+                            <div class="timer">
+                                <span><b>Mwafrika Josue</b></span>
+                                <span><b>10min ago</b></span><br>
+                            </div>
                             <span class="status-content" id="status-content">Oh My God! Help me to this last challenge
                                 Oh My God! Help </span>
                             <span class="status-content" id="status-content">Oh My God! Help me to this last
@@ -220,7 +222,7 @@
                             style="height:20px;width:20px; border-radius:50%;" onclick="myFunction()">
                         <div id="drp" class="drop-content">
                             <a href="#" id="myBtn">Edit post</a>
-                            <a href="#">Delete post</a>
+                            <a href="#" id="btnDelete">Delete post</a>
                         </div>
                         </img>
                     </div>
@@ -266,6 +268,17 @@
                         </div>
                     </div>
 
+                    <!-- delete the post  -->
+                    <div id="modalDelete" class="modal1">
+
+                        <div class="modal-content4">
+                            <span class="close2">&times;</span>
+                            <p>Are you sure to delete this Post ?</p>
+                            <button class="approve1" id="btnDel"><b>Confirm deletion</b> </button>
+                        </div>
+                    </div>
+
+                    <!-- delete the post -->
 
                     <!-- confirm update -->
                     <div id="myModal1" class="modal1">
@@ -282,8 +295,8 @@
                     <div class="client">
 
                         <img src="../images/micro2.jpg" alt="mon villa"
-                            onclick="window.open('../Html_files/Specific_property.html','_self');" srcset=""
-                            style="width:100%; height:100%; cursor:pointer;" id />
+                            onclick="window.open('../html_files/View_specific_post.html','_self');" srcset=""
+                            style="width:100%; height:100%; cursor:pointer;" />
 
                     </div>
                 </div>
@@ -321,16 +334,18 @@
 
             <div class="card2">
                 <div class="card-header2">
-                    <div class="status2" style="display: inherit;">
+                    <div class="status2" onclick="window.open('../html_files/userprofile.html','_self');" srcset=""
+                        style="width:100%; height:100%; cursor:pointer; display: inherit;">
 
                         <div>
                             <span><img src="../images/user.png" alt=""
                                     style="height: 30px;width:30px; border-radius:50%;margin-right: 10px;"></span>
                         </div>
-                        <div class="textuser" style="display:grid;">
-                            <span class="status-content" id="status-content1"><b>Mwafrika Josue</b></span>
-                            <span class="status-content" id="status-content1"
-                                style="font-family: comic Sans MS;"><b>10min ago</b></span><br>
+                        <div class="textuser">
+                            <div class="timer">
+                                <span><b>Mwafrika Josue</b></span>
+                                <span><b>10min ago</b></span><br>
+                            </div>
                             <span class="status-content" id="status-content">Oh My God! Help me to this last challenge
                                 Oh My God! Help </span>
                             <span class="status-content" id="status-content">Oh My God! Help me to this last
@@ -347,7 +362,7 @@
                             style="height:20px;width:20px; border-radius:50%;" onclick="myFunction1()">
                         <div id="drp1" class="drop-content">
                             <a href="#" id="myBut">Edit post</a>
-                            <a href="#">Delete post</a>
+                            <a href="#" id="delID">Delete post</a>
                         </div>
                         </img>
                     </div>
@@ -409,7 +424,7 @@
                     <div class="client">
 
                         <img src="../images/programmers.jpg" alt="mon villa"
-                            onclick="window.open('../Html_files/Specific_property.html','_self');" srcset=""
+                            onclick="window.open('../html_files/View_specific_post.html','_self');" srcset=""
                             style="width:100%; height:100%; cursor:pointer;" id />
 
                     </div>
@@ -447,16 +462,18 @@
 
             <div class="card2">
                 <div class="card-header2">
-                    <div class="status2" style="display: inherit;">
+                    <div class="status2" onclick="window.open('../html_files/userprofile.html','_self');" srcset=""
+                        style="width:100%; height:100%; cursor:pointer; display: inherit;">
 
                         <div>
                             <span><img src="../images/user.png" alt=""
                                     style="height: 30px;width:30px; border-radius:50%;margin-right: 10px;"></span>
                         </div>
-                        <div class="textuser" style="display:grid;">
-                            <span class="status-content" id="status-content1"><b>Mwafrika Josue</b></span>
-                            <span class="status-content" id="status-content1"
-                                style="font-family: comic Sans MS;"><b>10min ago</b></span><br>
+                        <div class="textuser">
+                            <div class="timer">
+                                <span><b>Mwafrika Josue</b></span>
+                                <span><b>10min ago</b></span><br>
+                            </div>
                             <span class="status-content" id="status-content">Oh My God! Help me to this last challenge
                                 Oh My God! Help </span>
                             <span class="status-content" id="status-content">Oh My God! Help me to this last
@@ -535,8 +552,8 @@
                     <div class="client">
 
                         <img src="../images/logo.png" alt="mon villa"
-                            onclick="window.open('../Html_files/Specific_property.html','_self');" srcset=""
-                            style="width:100%; height:100%; cursor:pointer;" id />
+                            onclick="window.open('../html_files/View_specific_post.html','_self');" srcset=""
+                            style="width:100%; height:100%; cursor:pointer;" />
 
                     </div>
                 </div>
@@ -651,9 +668,8 @@
                     <div class="first-element">
                         <div class="client">
 
-                            <img src="../images/micro3.jpg" alt="mon villa"
-                                onclick="window.open('../Html_files/Specific_property.html','_self');" srcset=""
-                                style="width:100%; height:100%; cursor:pointer;" id />
+                            <img src="../images/micro3.jpg" alt="mon villa" srcset=""
+                                style="width:100%; height:100%; cursor:pointer;" />
 
                         </div>
                         <div class="infos">
@@ -687,8 +703,7 @@
 
                         <div class="client">
 
-                            <img src="../images/team11.png" alt="mon villa"
-                                onclick="window.open('../Html_files/Specific_property.html','_self');" srcset=""
+                            <img src="../images/team11.png" alt="mon villa" srcset=""
                                 style="width:100%; height:100%; cursor:pointer;" id />
 
                         </div>
@@ -740,8 +755,7 @@
                 <div class="card-body3">
                     <div class="client">
 
-                        <img src="../images/team4.jpg" alt="mon villa"
-                            onclick="window.open('../Html_files/Specific_property.html','_self');" srcset=""
+                        <img src="../images/team4.jpg" alt="mon villa" srcset=""
                             style="width:100%; height:100%; cursor:pointer;" id />
 
                     </div>
@@ -752,19 +766,19 @@
 
                         <div id="info">
                             <div>
-                                <b>Details :</b> 2 bed rooms 1 bathroom 1 kitchen
+                                <b>Details :</b> Java Programming course
                             </div>
                             <div>
-                                <b>Date :</b> 12/02/2019
+                                <b> Post Date :</b> 12/02/2019
                             </div>
                             <div>
-                                <b>Location :</b> <span class="bolder"> Rwanda </span>
+                                <b>Website :</b> <span class="bolder"> W3School </span>
                             </div>
                             <div>
-                                <b>Address :</b>KIGALI
+                                <b>Price :</b>100.99 $
                             </div>
                             <div>
-                                <b>Contact :</b>mwafrikajosue@gmail.com
+                                <b>Author :</b>Mwafrika Mufungizi Josue
                             </div>
                             <div>
                                 <b>Phone :</b> <span class="bolder"> (+250) 787564203 </span>

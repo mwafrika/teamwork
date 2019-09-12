@@ -10,13 +10,24 @@ var swit = document.getElementById('switch');
 
 var modal = document.getElementById('myModal');
 var modal1 = document.getElementById('myModal1');
+var deleteModal = document.getElementById('modalDelete');
 
-var btn = document.getElementById('myBtn');
+var modalDel = document.getElementById('myModal2');
+
+var btn = document.getElementById('openModal');
 var btn1 = document.getElementById('myBut');
-var btn2 = document.getElementById('myBut1')
+var btn2 = document.getElementById('myBut1');
+var btnDelete = document.getElementById('deletePost');
+
+// delete button
+var del = document.getElementById('btnDel');
+var card = document.getElementById('cart');
+
 
 var span = document.getElementsByClassName('close')[0];
 var cloz = document.getElementsByClassName('close1')[0];
+var closeDel = document.getElementsByClassName('close2')[0];
+var delet = document.getElementsByClassName('approve1')[0];
 
 var confirm1 = document.getElementById('myBtn1');
 
@@ -24,11 +35,25 @@ span.onclick = function () {
   modal.style.display = 'none';
 }
 
+btn.onclick = function () {
+  modal.style.display = 'block';
+}
 btn1.onclick = function () {
   modal.style.display = 'block';
 }
 btn2.onclick = function () {
   modal.style.display = "block";
+}
+btnDelete.onclick = function () {
+  modalDel.style.display = "block";
+}
+// delete the card onclick button confirm
+delet.onclick = function () {
+  card.style.display = 'none';
+
+}
+closeDel.onclick = function () {
+  modalDel.style.display = "none";
 }
 
 window.onclick = function (event) {
@@ -42,6 +67,7 @@ window.onclick = function (event) {
     this.menu1.style.display = 'none';
   }
 }
+
 // to open the first modal
 confirm1.onclick = function () {
   modal.style.display = 'none';
@@ -49,6 +75,7 @@ confirm1.onclick = function () {
 }
 cloz.onclick = function () {
   modal1.style.display = 'none';
+  // card.style.display = 'none';
 }
 
 
