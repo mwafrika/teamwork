@@ -48,10 +48,23 @@ body {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 0px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+}
+.modal-content p{
+  padding: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+.modal-content4 {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 0px 0px 20px 0px;
   border: 1px solid #888;
   width: 40%;
 }
@@ -68,7 +81,7 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content1,
-.modal-content2 {
+.modal-content2 .modal-content4 {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 0px;
@@ -83,18 +96,21 @@ body {
 }
 .close:hover,
 .close1:hover,
+.close2,
 .close:focus,
-.close1:focus {
+.close1:focus .close2:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
-.modal-content p {
+.modal-content1,
+.modal-content4 p {
   padding: 40px;
   text-align: center;
   font-size: 20px;
 }
-.close1 {
+.close1,
+.close2 {
   color: #aaa;
   float: right;
   font-size: 40px;

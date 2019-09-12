@@ -55,6 +55,13 @@ body {
   border: 1px solid #888;
   width: 40%;
 }
+.modal-content4 {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 0px 0px 20px 0px;
+  border: 1px solid #888;
+  width: 40%;
+}
 .modal1 {
   display: none;
   position: fixed;
@@ -75,15 +82,24 @@ body {
   border: 1px solid #888;
   width: 40%;
 }
-.close {
+.modal-content4 {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 0px 0px 20px 0px;
+  border: 1px solid #888;
+  width: 40%;
+}
+.close,
+.close2 {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 38px;
   font-weight: bold;
 }
 .close:hover,
-.close1:hover,
+.close2:hover .close1:hover,
 .close:focus,
+.close2:focus,
 .close1:focus {
   color: black;
   text-decoration: none;
@@ -94,6 +110,12 @@ body {
   text-align: center;
   font-size: 20px;
 }
+.modal-content4 p {
+  padding: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+
 .close1 {
   color: #aaa;
   float: right;
@@ -274,6 +296,13 @@ form input {
 }
 .textuser {
   font-size: 15px;
+  display: inline-block;
+}
+.timer {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
 }
 .names p {
   line-height: 0.5;
@@ -528,8 +557,7 @@ li a:hover {
 .aside img {
   width: 65%;
 }
-#aside-menu {
-}
+
 .card2 .card-body2 {
   position: relative;
   display: flex;
