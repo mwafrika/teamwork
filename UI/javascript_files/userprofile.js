@@ -2,7 +2,6 @@ var menu1 = document.getElementById('drp');
 var men1 = document.getElementById('drp1');
 var men2 = document.getElementById('drp2');
 var menu2 = document.getElementById('myDropdown');
-var close1 = document.getElementsByClassName('dropdown');
 var swit = document.getElementById('switch');
 var modal = document.getElementById('myModal');
 var modal1 = document.getElementById('myModal1');
@@ -14,6 +13,7 @@ var btn = document.getElementById('myBtn');
 var btn1 = document.getElementById('myBut');
 var btn2 = document.getElementById('myBut1');
 
+var close1 = document.getElementsByClassName('dropdown')[0];
 var span = document.getElementsByClassName('close')[0];
 var cloz = document.getElementsByClassName('close1')[0];
 var delButton = document.getElementsByClassName('approve1')[0];

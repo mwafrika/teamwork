@@ -573,7 +573,6 @@ li a:hover {
 }
 .card3 .align-col {
   display: grid;
-  /* flex-direction: column; */
   position: relative;
 }
 .card-footer {
