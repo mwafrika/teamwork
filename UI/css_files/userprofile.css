@@ -438,16 +438,17 @@ li a:hover {
 }
 
 .banner {
-  background-image: url("../images/banner3.jpg");
+  background-image: url("../images/mynature.jpeg");
   width: 100%;
   height: 31vh;
   margin-top: 0%;
   /* margin-bottom: 100px; */
   position: relative;
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   border-bottom: 1px solid white;
 }
+
 .profilepic {
   background-image: url(../images/images2.png);
   height: 200px;
@@ -583,12 +584,17 @@ li a:hover {
   border-bottom: 1px solid grey;
   border-top: 1px solid grey;
 }
+#drp.show,#drp1.show{
+  display: block;
+}
+
 .more {
   padding: 5px 1em;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 .card-footer2 {
   padding: 5px 1em;
   display: flex;
@@ -731,12 +737,26 @@ li a:hover {
 
 @media only screen and (max-width: 690px) {
   .banner {
-    background-image: url(../images/banner3.jpg);
+    background-image: url(../images/mynature.jpeg);
     width: 100%;
     height: 31vh;
     margin-top: 0%;
     position: relative;
     background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid white;
+  }
+}
+
+@media only screen and (min-device-width: 400px) {
+  .banner {
+    background-image: url("../images/my1.jpeg");
+    width: auto;
+    height: 31vh;
+    margin-top: 0%;
+    /* margin-bottom: 100px; */
+    position: relative;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     border-bottom: 1px solid white;
   }

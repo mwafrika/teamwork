@@ -53,18 +53,12 @@ btn2.onclick = function () {
 }
 
 window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-  if (event.target == modal1) {
-    this.modal1.style.display = 'none';
-  }
+ 
+  
   if (event.target == this.menu1) {
     this.menu1.style.display = 'none';
   }
-  if (event.target == this.delMod) {
-    this.delMod.style.display = 'none';
-  }
+  
 }
 
 confirm1.onclick = function () {
@@ -77,52 +71,16 @@ cloz.onclick = function () {
 }
 
 
-function myFunction() {
-  var menuBox = menu1;
-  if (menuBox.style.display == "block") {
-    menuBox.style.display = "none";
-  }
-  else {
-    menuBox.style.display = "block";
-  }
-}
-function function2() {
-  var x = men2;
-  if (x.style.display == "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-
-function myFunction1() {
-  var second = men1;
-  if (second.style.display == "block") {
-    second.style.display = "none";
-  } else {
-    second.style.display = "block";
-  }
-}
-
-
-function settings() {
-  var menuBox = menu2;
-  if (menuBox.style.display == "block") {
-    menuBox.style.display = "none";
-  }
-  else {
-    menuBox.style.display = "block";
-  }
-}
-
 function DropDown(){
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("drp").classList.add("show");
 }
-
+function DropDown1(){
+  document.getElementById("drp1").classList.add("show");
+}
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+  if (!event.target.matches('.dropb')) {
+    var dropdowns = document.getElementsByClassName("drop-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
@@ -130,5 +88,15 @@ window.onclick = function(event) {
         openDropdown.classList.remove('show');
       }
     }
+  }
+
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+  if (event.target == modal1) {
+    this.modal1.style.display = 'none';
+  }
+  if (event.target == this.delMod) {
+    this.delMod.style.display = 'none';
   }
 }

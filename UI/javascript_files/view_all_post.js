@@ -1,120 +1,90 @@
-var menu1 = document.getElementById('drp');
-var men1 = document.getElementById('drp1');
-var men2 = document.getElementById('drp2');
-
-var menu2 = document.getElementById('myDropdown');
-
-var close1 = document.getElementsByClassName('dropdown');
-
-var swit = document.getElementById('switch');
-
+var mainDropClass = document.getElementsByClassName('dropdown')[0];
+var imgDrop = document.getElementsByClassName('dropb')[0];
+var dropdownCont = document.getElementsByClassName('drop-content')[0];
 var modal = document.getElementById('myModal');
-var modal1 = document.getElementById('myModal1');
-var deleteModal = document.getElementById('modalDelete');
+var btnUpdate = document.getElementById('myBtn1');
+var msgUpdate = document.getElementById('myModal1');
+var closeMsg = document.getElementsByClassName('close1')[0];
+var closeModal = document.getElementsByClassName('close')[0];
+var modal1 = document.getElementsByClassName('modal1')[0];
 
-var modalDel = document.getElementById('myModal2');
-
-var btn = document.getElementById('openModal');
-var btn1 = document.getElementById('myBut');
-var btn2 = document.getElementById('myBut1');
-var btnDelete = document.getElementById('deletePost');
-
-// delete button
-var del = document.getElementById('btnDel');
-var card = document.getElementById('cart');
+var deletePost = document.getElementById('deletePost');
+var confirmDel = document.getElementById('myModal2');
+var closeConfirm = document.getElementsByClassName('close2')[0];
+var btnDel = document.getElementById('btnDel');
+var modCont = document.getElementById('modcont');
+var idCart = document.getElementById('cart');
 
 
-var span = document.getElementsByClassName('close')[0];
-var cloz = document.getElementsByClassName('close1')[0];
-var closeDel = document.getElementsByClassName('close2')[0];
-var delet = document.getElementsByClassName('approve1')[0];
 
-var confirm1 = document.getElementById('myBtn1');
+var dropdownContID = document.getElementById('drop-cont');
+var dropdownContID1 = document.getElementById('drop-cont1');
+var openMod = document.getElementById('openModal');
 
-span.onclick = function () {
+openMod.onclick = function(){
+  modal.style.display ='block';
+}
+btnUpdate.onclick = function(){
+  msgUpdate.style.display = 'block';
   modal.style.display = 'none';
 }
-
-btn.onclick = function () {
-  modal.style.display = 'block';
+deletePost.onclick = function(){
+  confirmDel.style.display = 'block';
 }
-btn1.onclick = function () {
-  modal.style.display = 'block';
+modal1.onclick = function(){
+  confirmDel.style.display ='none';
+  idCart.style.display ='none';
 }
-btn2.onclick = function () {
-  modal.style.display = "block";
+closeConfirm.onclick = function(){
+confirmDel.style.display = 'none';
 }
-btnDelete.onclick = function () {
-  modalDel.style.display = "block";
+closeModal.onclick = function(){
+  modal.style.display ='none';
 }
-// delete the card onclick button confirm
-delet.onclick = function () {
-  card.style.display = 'none';
-
-}
-closeDel.onclick = function () {
-  modalDel.style.display = "none";
+closeMsg.onclick = function(){
+  msgUpdate.style.display ='none';
 }
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
+// Prevents menu from closing when clicked inside 
+document.getElementById("drop-cont").addEventListener('click', function (event) { 
+  event.stopPropagation();
+}); 
+
+document.getElementById("drop-cont1").addEventListener('click', function (event) { 
+  event.stopPropagation();
+}); 
+
+document.getElementById("drop-cont2").addEventListener('click', function (event) { 
+  event.stopPropagation();
+}); 
+// add the class show by clicking the image
+function DropDown(){
+  document.getElementById("drop-cont").classList.add("show");
+}
+function DropDown1(){
+  document.getElementById("drop-cont1").classList.add("show");
+}
+function DropDown2(){
+  document.getElementById("drop-cont2").classList.add("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropb')) {
+    var dropdowns = document.getElementsByClassName("drop-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
   }
-  if (event.target == modal1) {
-    this.modal1.style.display = 'none';
+  if(event.target == modal){
+    this.modal.style.display = 'none';
   }
-  if (event.target == this.menu1) {
-    this.menu1.style.display = 'none';
+  if(event.target == this.msgUpdate){
+    this.msgUpdate.style.display = 'none';
   }
+  
 }
-
-// to open the first modal
-confirm1.onclick = function () {
-  modal.style.display = 'none';
-  modal1.style.display = 'block';
-}
-cloz.onclick = function () {
-  modal1.style.display = 'none';
-  // card.style.display = 'none';
-}
-
-
-function myFunction() {
-  var menuBox = menu1;
-  if (menuBox.style.display == "block") {
-    menuBox.style.display = "none";
-  }
-  else {
-    menuBox.style.display = "block";
-  }
-}
-function function2() {
-  var x = men2;
-  if (x.style.display == "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-
-function myFunction1() {
-  var second = men1;
-  if (second.style.display == "block") {
-    second.style.display = "none";
-  } else {
-    second.style.display = "block";
-  }
-}
-
-
-function settings() {
-  var menuBox = menu2;
-  if (menuBox.style.display == "block") {
-    menuBox.style.display = "none";
-  }
-  else {
-    menuBox.style.display = "block";
-  }
-}
-
 
