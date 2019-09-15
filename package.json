@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": " mocha ./Server/test/*.js"
   },
   "repository": {
     "type": "git",
@@ -33,8 +33,10 @@
     "swagger-ui-express": "^4.1.0"
   },
   "dependencies": {
+    "chai": "^4.2.0",
     "coveralls": "^3.0.6",
     "dotenv": "^8.1.0",
+    "mocha": "^6.2.0",
     "travis": "^0.1.1"
   }
 }
