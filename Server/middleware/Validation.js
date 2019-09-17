@@ -1,0 +1,27 @@
+import Validator from './validateInputs';
+
+class ValidateInfo {
+  static signupVerify(req, res, next) {
+    const {
+      firstName, lastName, password, email, address, jobRole, gender, department,
+    } = req.body;
+    const resp = (error, code) => res.status(code).send({ status: 'error', error });
+    if (Validator.checkEmpty(email)) return resp('email cannot be empty', 400);
+    if (Validator.checkEmpty(lastName)) return resp('last name cannot be empty', 400);
+    if (Validator.checkEmpty(password)) return resp('password cannot be empty', 400);
+    if (Validator.checkEmpty(firstName)) return resp('first name cannot be empty', 400);
+    if (Validator.checkEmpty(address)) return resp('address cannot be empty', 400);
+    if (Validator.checkEmpty(jobRole)) return resp('jobRole cannot be empty', 400);
+    if (Validator.checkEmpty(gender)) return resp('gender cannot be empty', 400);
+    if (Validator.checkEmpty(department)) return resp('department cannot be empty', 400);
+
+    // verify for valid information
+    if (!Validator.isEmail(email)) return resp('email is not valid', 422);
+    if (Validator.isNotNumber(firstName)) return resp('first name cannot contain numbers', 422);
+    if (Validator.isNotNumber(lastName)) return resp('last name cannot contain numbers', 422);
+    if (Validator.isNotNumber(gender)) return resp('gender cannot contain numbers', 422);
+
+    return next();
+  }
+}
+export default ValidateInfo;
