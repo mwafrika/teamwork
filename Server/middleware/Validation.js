@@ -23,5 +23,14 @@ class ValidateInfo {
 
     return next();
   }
+
+  static signinVerify(req, res, next) {
+    const { email, password } = req.body;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (Validator.checkEmpty(password)) return response('password cannot be empty', 400);
+    if (Validator.checkEmpty(email)) return response('email cannot be empty', 400);
+
+    return next();
+  }
 }
 export default ValidateInfo;

@@ -21,5 +21,22 @@ class userController {
       });
     });
   }
+
+  static SigninUser(req, res) {
+    const user = req.body;
+    const myUsers = userHelper.signin(user);
+    if (!myUsers) {
+      res.status(404).send({
+        status: 'error',
+        error: 'invalid credentials!!! no user exist',
+      });
+    }
+    return jwt.sign(myUsers, process.env.JWT_SECRET, (err, token) => {
+      res.status(200).send({
+        token,
+      });
+    });
+  }
 }
+
 export default userController;
