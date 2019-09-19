@@ -32,5 +32,14 @@ class ValidateInfo {
 
     return next();
   }
+
+  static createArticle(req, res, next) {
+    const { title, article } = req.body;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (Validator.checkEmpty(title)) return response('title cannot be empty', 400);
+    if (Validator.checkEmpty(article)) return response('article cannot be empty', 400);
+
+    return next();
+  }
 }
 export default ValidateInfo;
