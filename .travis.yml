@@ -1,24 +1,12 @@
 language: node_js
 node_js:
   - "stable"
-
 cache:
 directories:
   - "node_modules"
 
 install:
   - npm install
-  
-#   addons:
-#     code_climate:
-#         repo_token:
-#            secure: 36a9eccd8e0b74770449918d879b05728db4e2de6741001a0938e51e901909ca
-# script: ./node_modules/.bin/nyc --reporter=lcov ./node_modules/mocha/bin/mocha --require @babel/register
-# before_script:
-#   - npm install codeclimate-test-reporter nyc -g
-# after_script:
-#   - codeclimate-test-reporter < ./coverage/lcov.info
-
 script:
   - npm run test
   - npm run coverage
