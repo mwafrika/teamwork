@@ -1,4 +1,5 @@
 import artService from '../services/articleService';
+import artHelper from '../helpers/articles';
 
 const artController = {
   async postArticle(req, res) {
@@ -16,6 +17,10 @@ const artController = {
       message: 'article successfully created',
       data: addArt,
     });
+  },
+
+  getAll(req, res) {
+    return artHelper.getAllarticle(res);
   },
 };
 export default artController;
