@@ -22,5 +22,11 @@ class Articles {
     if (!specific) return false;
     return specific;
   }
+
+  static deleteArticle(id, email) {
+    const findArticle = article.articles.findIndex(((art) => art.id == id && art.email == email));
+    if (findArticle === -1) return false;
+    return article.articles.splice(findArticle, 1);
+  }
 }
 export default Articles;
