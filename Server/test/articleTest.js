@@ -24,9 +24,18 @@ before((done) => {
       done();
     });
 });
+
 const data = {
+  id: 4,
   title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
   article: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  email: 'mwafrikajosue@gmail.com',
+};
+const emptyID = {
+  id: null,
+  title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
+  article: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  email: 'mwafrikajosue@gmail.com',
 };
 const emptyTitle = {
   title: '',
@@ -37,10 +46,23 @@ const emptyArticle = {
   article: '',
 };
 
+const articleNotFound = {
+  id: 8,
+  title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
+  article: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  email: 'mwafrikajosue@gmail.com',
+};
+const articleOwner = {
+  id: 1,
+  email: 'mwafrikajosue@gmail.com',
+  password: '123456',
+};
+
+
 describe('Articles', () => {
   it('should create an article', (done) => {
     chai.request(app)
-      .post('/article')
+      .post('/api/v1/article')
       .send(data)
       .set('Authorization', token)
       .end((request, response) => {
@@ -51,12 +73,14 @@ describe('Articles', () => {
         response.body.data.should.have.property('createdOn');
         response.body.data.should.have.property('title').equal(data.title);
         response.body.data.should.have.property('article').equal(data.article);
+        response.body.data.should.have.property('id').equal(data.id);
+        response.body.data.should.have.property('email').equal(data.email);
         done();
       });
   });
   it('should not post an article with no token', (done) => {
     chai.request(app)
-      .post('/article')
+      .post('/api/v1/article')
       .send(data)
       .set('Authorization', '')
       .end((err, res) => {
@@ -67,7 +91,7 @@ describe('Articles', () => {
   });
   it('should not post article with empty title', (done) => {
     chai.request(app)
-      .post('/article')
+      .post('/api/v1/article')
       .send(emptyTitle)
       .set('Authorization', token)
       .end((err, res) => {
@@ -78,7 +102,7 @@ describe('Articles', () => {
   });
   it('should not post with empty article', (done) => {
     chai.request(app)
-      .post('/article')
+      .post('/api/v1/article')
       .send(emptyArticle)
       .set('Authorization', token)
       .end((err, res) => {
@@ -89,11 +113,56 @@ describe('Articles', () => {
   });
   it('should get all the articles', (done) => {
     chai.request(app)
-      .get('/article')
+      .get('/api/v1/article')
       .send(data)
       .set('Authorization', token)
       .end((err, res) => {
         expect(res.body).to.be.an('object');
+        done();
+      });
+  });
+  it('should successfully get a specific article if the user is authenticated', (done) => {
+    chai.request(app)
+      .get('/api/v1/article/:id')
+      .send(data)
+      .set('Authorization', token)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        done();
+      });
+  });
+  it('should not get a specific article if the user has not Article', (done) => {
+    chai.request(app)
+      .get('/api/v1/article/:id')
+      .set('Authorization', token)
+      .send(articleNotFound)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.body.error).to.equal('Article not found, please try another');
+        expect(res.status).to.equal(404);
+        console.log(res.body.token);
+        done();
+      });
+  });
+  it('should not get a specific article with a non integer value', (done) => {
+    chai.request(app)
+      .get('/api/v1/article/:id')
+      .set('Authorization', token)
+      .send({ id: 'y' })
+      .end((err, res) => {
+        expect(res.body.error).to.equal('please provide a valid, id cannot be a string value');
+        expect(res.status).to.equal(422);
+        done();
+      });
+  });
+  it('should not get an specific article with an empty URL params', (done) => {
+    chai.request(app)
+      .get('/api/v1/article/:id')
+      .set('Autorization', token)
+      .send({ id: undefined })
+      .end((err, res) => {
+        expect(res.body.error).to.equal('please specify the id');
+        expect(res.status).to.equal(400);
         done();
       });
   });

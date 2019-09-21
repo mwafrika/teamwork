@@ -2,6 +2,7 @@ import artService from '../services/articleService';
 import artHelper from '../helpers/articles';
 
 const artController = {
+
   async postArticle(req, res) {
     const { email } = req.user;
     const { title, article } = req.body;
@@ -21,6 +22,18 @@ const artController = {
 
   getAll(req, res) {
     return artHelper.getAllarticle(res);
+  },
+  async getSpecific(req, res) {
+    const { email } = req.user; // email of authenticated user
+    const { id } = req.params;
+
+    const findArticle = await artService.getSpecific(id, email);
+    if (!findArticle) return res.status(404).send({ status: 'error', error: 'Article not found, please try another' });
+
+    return res.status(200).send({
+      status: 'success',
+      data: findArticle,
+    });
   },
 };
 export default artController;
