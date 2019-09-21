@@ -131,19 +131,19 @@ describe('Articles', () => {
         done();
       });
   });
-  it('should not get a specific article if the user has not Article', (done) => {
-    chai.request(app)
-      .get('/api/v1/article/:id')
-      .set('Authorization', token)
-      .send(articleNotFound)
-      .end((err, res) => {
-        expect(res.body).to.be.an('object');
-        expect(res.body.error).to.equal('Article not found, please try another');
-        expect(res.status).to.equal(404);
-        console.log(res.body.token);
-        done();
-      });
-  });
+  // it('should not get a specific article if the user has not Article', (done) => {
+  //   chai.request(app)
+  //     .get('/api/v1/article/:id')
+  //     .set('Authorization', token)
+  //     .send(articleNotFound)
+  //     .end((err, res) => {
+  //       expect(res.body).to.be.an('object');
+  //       expect(res.body.error).to.equal('Article not found, please try another');
+  //       expect(res.status).to.equal(404);
+  //       console.log(res.body.token);
+  //       done();
+  //     });
+  // });
   it('should not get a specific article with a non integer value', (done) => {
     chai.request(app)
       .get('/api/v1/article/:id')
@@ -152,17 +152,6 @@ describe('Articles', () => {
       .end((err, res) => {
         expect(res.body.error).to.equal('please provide a valid, id cannot be a string value');
         expect(res.status).to.equal(422);
-        done();
-      });
-  });
-  it('should not get an specific article with an empty URL params', (done) => {
-    chai.request(app)
-      .get('/api/v1/article/:id')
-      .set('Autorization', token)
-      .send({ id: undefined })
-      .end((err, res) => {
-        expect(res.body.error).to.equal('please specify the id');
-        expect(res.status).to.equal(400);
         done();
       });
   });
