@@ -47,5 +47,16 @@ const artController = {
       data: 'Article successfully deleted',
     });
   },
+
+  editArticle(req, res) {
+    const { email } = req.user;
+    const { article } = req.body;
+    const { id } = req.params;
+
+    const editArt = artService.editArticles(email, parseInt(id, 10), article);
+    if (!editArt) return res.status(404).send({ status: 'error', err: 'article not found' });
+    return res.status(200).send({ status: 'success', data: editArt });
+  },
+
 };
 export default artController;
