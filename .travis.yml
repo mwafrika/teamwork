@@ -8,16 +8,12 @@ addons:
   chrome: stable
 install:
   - npm install
-  
 before_script:
   - npm install coverage
   - npm install -g nyc  
-after_script:
-  - npm run coverage
 script:
-  - npm run test
   - npm run coverage
-
+  - npm run test
 
 # after_success:
 # - npm run coverage
