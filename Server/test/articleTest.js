@@ -177,7 +177,7 @@ describe('Articles', () => {
   });
   it('should not update an article with an invalid url parameter', (done) => {
     chai.request(app)
-      .patch('/article/:id/article')
+      .patch('/article/:id/title/article')
       .set('Authorization', token)
       .send({ id: 'u' })
       .end((err, res) => {
@@ -188,7 +188,7 @@ describe('Articles', () => {
   });
   it('should not update an article with empty field', (done) => {
     chai.request(app)
-      .patch('/article/:id/article')
+      .patch('/article/:id/title/article')
       .set('Authorization', token)
       .send({ article: '' })
       .end((err, res) => {
@@ -196,7 +196,7 @@ describe('Articles', () => {
         expect(res.body.error).to.equal('article cannot be empty');
         done();
       });
-  });
+
   // it('should not delete an article that does not belong to user', (done) => {
   //   chai.request(app)
   //     .delete('/api/v1/article/:id', token)
@@ -209,4 +209,5 @@ describe('Articles', () => {
   //       done();
   //     });
   // });
+  });
 });

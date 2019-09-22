@@ -30,13 +30,14 @@ class Articles {
     return article.articles.splice(findArticle, 1);
   }
 
-  static editArticles(userEmail, articleID, articl) {
+  static editArticles(userEmail, articleID, articl, title) {
     // eslint-disable-next-line max-len
     const findArt = article.articles.find(((art) => art.email == userEmail && art.id == articleID));
     if (!findArt) return false;
     const artIndex = article.articles.indexOf(findArt);
     findArt.article = articl;
-    findArt.article.slice(artIndex, 1, findArt);
+    findArt.title = title;
+    findArt.article.slice(artIndex, 1, findArt); // to be reviewed to add 2
 
     return findArt;
   }

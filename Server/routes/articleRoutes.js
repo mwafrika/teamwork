@@ -9,6 +9,6 @@ router
   .get('/api/v1/article', authorize, artController.getAll)
   .get('/api/v1/article/:id', authorize, inputChecker.getSpecificArticle, artController.getSpecific)
   .delete('/api/v1/article/:id', authorize, inputChecker.getSpecificArticle, artController.deleteArticle)
-  .patch('/article/:id/article', authorize, inputChecker.editVerify, artController.editArticle);
+  .patch('/article/:id/title/article', authorize, inputChecker.editVerify, artController.editArticle);
 
 export default router;

@@ -53,10 +53,11 @@ class ValidateInfo {
   }
 
   static editVerify(req, res, next) {
-    const { article } = req.body;
+    const { article, title } = req.body;
     const { id } = req.params;
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(article)) return response('article cannot be empty', 400);
+    if (Validator.checkEmpty(title)) return response('title cannot be empty', 400);
     if (isNaN(id)) return response('please enter a valid number', 422);
 
     return next();
