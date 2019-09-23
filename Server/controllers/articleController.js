@@ -4,7 +4,6 @@ import ArticleHelper from '../helpers/articles';
 import db from '../models/dB';
 
 const artController = {
-
   async postArticle(req, res) {
     const { email } = req.user;
     const { title, article } = req.body;
@@ -47,5 +46,6 @@ const artController = {
       data: 'Article successfully deleted',
     });
   },
+
 };
 export default artController;
