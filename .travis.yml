@@ -9,7 +9,7 @@ addons:
 install:
   - npm install
 before_script:
-  - npm install coverage
+  - npm install coveralls
   - npm install -g nyc  
 script:
   - npm run coverage
@@ -17,4 +17,7 @@ script:
 
 # after_success:
 # - npm run coverage
+
+# after_script:
+#   - npm install coveralls && npm run coveralls
 
