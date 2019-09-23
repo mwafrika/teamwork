@@ -12,10 +12,8 @@ before_script:
   - npm install coverage
   - npm install -g nyc  
 script:
+  - npm run coverage
   - npm run test
-  - npm run coverage
-after_script:
-  - npm run coverage
 
 # after_success:
 # - npm run coverage

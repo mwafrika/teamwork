@@ -2,6 +2,7 @@ import chai, { expect } from 'chai';
 import chaihttp from 'chai-http';
 import chaiThings from 'chai-things';
 import should from 'should';
+import db from '../models/dB';
 import app from '../../index';
 
 chai.use(chaihttp);
@@ -56,7 +57,7 @@ const articleOwner = {
   email: 'mwafrikajosue@gmail.com',
   password: '123456',
 };
-
+const nothing = db.articles[-1];
 
 describe('Articles', () => {
   it('should create an article', (done) => {
@@ -130,19 +131,6 @@ describe('Articles', () => {
         done();
       });
   });
-  // it('should not get a specific article if the user has not Article', (done) => {
-  //   chai.request(app)
-  //     .get('/api/v1/article/:id')
-  //     .set('Authorization', token)
-  //     .send(articleNotFound)
-  //     .end((err, res) => {
-  //       expect(res.body).to.be.an('object');
-  //       expect(res.body.error).to.equal('Article not found, please try another');
-  //       expect(res.status).to.equal(404);
-  //       console.log(res.body.token);
-  //       done();
-  //     });
-  // });
   it('should not get a specific article with a non integer value', (done) => {
     chai.request(app)
       .get('/api/v1/article/:id')
@@ -154,4 +142,46 @@ describe('Articles', () => {
         done();
       });
   });
+  it('should not delete an non iteger id', (done) => {
+    chai.request(app)
+      .delete('/api/v1/article/:id')
+      .set('Authorization', token)
+      .send('g')
+      .end((err, res) => {
+        expect(res.body.error).to.equal('please provide a valid, id cannot be a string value');
+        expect(res.status).to.equal(422);
+        done();
+      });
+  });
+  it('should not delete if the employee is not logged in', (done) => {
+    chai.request(app)
+      .delete('/api/v1/article/:id')
+      .set('Authorization', '')
+      .end((err, res) => {
+        expect(res.body.error).to.equal('You must be logged in to use this route');
+        expect(res.status).to.equal(401);
+        done();
+      });
+  });
+  it('should not delete an article which does not belong to an employee', (done) => {
+    chai.request(app)
+      .delete('/api/v1/article/:id')
+      .set('Autorization', token)
+      .send({ data: '' })
+      .end((err, res) => {
+        expect(res.body.error).to.equal('You must be logged in to use this route');
+        expect(res.status).to.equal(401);
+        done();
+      });
+  });
+  // it('should successfully delete an article', (done) => {
+  //   chai.request(app)
+  //     .delete('/api/v1/article/:id', token)
+  //     .end((err, res) => {
+  //       expect(res.status).to.equal(204);
+  //       expect(res.body.data).to.equal('Article successfully deleted');
+  //       console.log(res.message);
+  //       done();
+  //     });
+  // });
 });

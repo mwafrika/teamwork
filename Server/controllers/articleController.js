@@ -1,5 +1,7 @@
 import artService from '../services/articleService';
 import artHelper from '../helpers/articles';
+import ArticleHelper from '../helpers/articles';
+import db from '../models/dB';
 
 const artController = {
   async postArticle(req, res) {
@@ -32,6 +34,16 @@ const artController = {
     return res.status(200).send({
       status: 'success',
       data: findArticle,
+    });
+  },
+  async deleteArticle(req, res) {
+    const { id } = req.params;
+    const { email } = req.user;
+    const findArticle = artService.deleteArticle(id, email);
+    if (findArticle === -1 || !findArticle) return res.status(404).send({ status: 404, error: 'Article not found' });
+    return res.status(204).send({
+      status: 204,
+      data: 'Article successfully deleted',
     });
   },
 
