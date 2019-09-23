@@ -174,14 +174,39 @@ describe('Articles', () => {
         done();
       });
   });
-  // it('should successfully delete an article', (done) => {
+  it('should not update an article with an invalid url parameter', (done) => {
+    chai.request(app)
+      .patch('/article/:id/title/article')
+      .set('Authorization', token)
+      .send({ id: 'u' })
+      .end((err, res) => {
+        expect(res.status).to.equal(422);
+        expect(res.body.error).to.equal('please enter a valid number');
+        done();
+      });
+  });
+  it('should not update an article with empty field', (done) => {
+    chai.request(app)
+      .patch('/article/:id/title/article')
+      .set('Authorization', token)
+      .send({ article: '' })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('article cannot be empty');
+        done();
+      });
+
+  // it('should not delete an article that does not belong to user', (done) => {
   //   chai.request(app)
   //     .delete('/api/v1/article/:id', token)
+  //     .set('Authorization', token)
+  //     .send({ id: 2 })
   //     .end((err, res) => {
-  //       expect(res.status).to.equal(204);
-  //       expect(res.body.data).to.equal('Article successfully deleted');
+  //       expect(res.status).to.equal(404);
+  //       expect(res.body.error).to.equal('Article not found');
   //       console.log(res.message);
   //       done();
   //     });
   // });
+  });
 });
