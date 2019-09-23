@@ -1,5 +1,7 @@
 import chai, { expect } from 'chai';
 import chaiHtpp from 'chai-http';
+import should from 'should';
+
 import app from '../../index';
 
 chai.use(chaiHtpp);
@@ -19,10 +21,9 @@ describe('User should be able to signup', () => {
         address: 'Gisenyi',
       }).end((err, res) => {
         expect(res.body).to.be.a('object');
-        // console.log(res.body);
         expect(res.status).to.equal(201);
         expect(res.body).to.have.key(['token']);
-        console.log(res.body);
+
         done();
       });
   });
@@ -283,3 +284,55 @@ describe('User should be able to signup', () => {
       });
   });
 });
+describe('should be able to signin', () => {
+  it('should not allow to signin with unregistered information', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'safi@gmail.com',
+        password: '123',
+      }).end((err, res) => {
+        expect(res.status).to.equal(404);
+        expect(res.body.error).to.equal('invalid credentials!!! no user exist');
+        done();
+      });
+  });
+
+  it('should signin in successfully', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'kakule@gmail.com',
+        password: '1234',
+      }).end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body).to.have.key(['token']);
+        done();
+      });
+  });
+  it('should not login with empty email', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: '',
+        password: '1234',
+      }).end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('email cannot be empty');
+        done();
+      });
+  });
+  it('should not signin with empty password', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'mwafri@gmail.com',
+        password: '',
+      }).end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('password cannot be empty');
+        done();
+      });
+  });
+});
+

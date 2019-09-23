@@ -40,5 +40,18 @@ class userHelper {
     };
     return userDetails;
   }
+
+  static signin(userData) {
+    const allData = db.users;
+    const findUser = allData.find(((user) => user.email === userData.email && user.password === userData.password));
+    if (!findUser) return false;
+    const userExist = {
+      id: findUser.id,
+      email: findUser.email,
+      password: findUser.password,
+      isAdmin: findUser.isAdmin,
+    };
+    return userExist;
+  }
 }
 export default userHelper;
