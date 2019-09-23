@@ -6,16 +6,16 @@ directories:
   - "node_modules"
 addons:
   chrome: stable
-install:
-  - npm install
+# install:
+#   - npm install
 before_script:
-  - npm install coveralls
+  - npm install coverage
   - npm install -g nyc  
 script:
-  - npm run coverage
+  # - npm run coverage
   - npm run test
 after_script:
-  - npm install coveralls && npm run coverage
+  - npm run coverage
 # after_success:
 # - npm run coverage
 
