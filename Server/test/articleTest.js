@@ -45,7 +45,6 @@ const emptyArticle = {
   title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
   article: '',
 };
-
 const articleNotFound = {
   id: 8,
   title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',

@@ -2,7 +2,6 @@ import artService from '../services/articleService';
 import artHelper from '../helpers/articles';
 
 const artController = {
-
   async postArticle(req, res) {
     const { email } = req.user;
     const { title, article } = req.body;
@@ -35,5 +34,6 @@ const artController = {
       data: findArticle,
     });
   },
+
 };
 export default artController;
