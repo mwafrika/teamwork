@@ -177,7 +177,7 @@ describe('Articles', () => {
   });
   it('should not update an article with an invalid url parameter', (done) => {
     chai.request(app)
-      .patch('/article/:id/title/article')
+      .patch('/api/v1/article/:id/title/article')
       .set('Authorization', token)
       .send({ id: 'u' })
       .end((err, res) => {
@@ -188,7 +188,7 @@ describe('Articles', () => {
   });
   it('should not update an article with empty field', (done) => {
     chai.request(app)
-      .patch('/article/:id/title/article')
+      .patch('/api/v1/article/:id/title/article')
       .set('Authorization', token)
       .send({ article: '' })
       .end((err, res) => {
