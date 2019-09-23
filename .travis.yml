@@ -14,10 +14,10 @@ before_script:
 script:
   - npm run coverage
   - npm run test
-
+after_script:
+  - npm install coveralls && npm run coverage
 # after_success:
 # - npm run coverage
 
-# after_script:
-#   - npm install coveralls && npm run coveralls
+
 
