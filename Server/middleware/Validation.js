@@ -41,5 +41,15 @@ class ValidateInfo {
 
     return next();
   }
+
+  static getSpecificArticle(req, res, next) {
+    const { id } = req.params;
+
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (id === undefined) return response('please specify the id', 400);
+    if (isNaN(id)) return response('please provide a valid, id cannot be a string value', 422);
+
+    return next();
+  }
 }
 export default ValidateInfo;

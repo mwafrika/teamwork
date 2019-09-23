@@ -15,5 +15,12 @@ class Articles {
   static getAllArticles() {
     return article.articles.sort((a, b) => b.id - a.id);
   }
+
+  static getSpecific(artID, userEmail) {
+    // eslint-disable-next-line max-len
+    const specific = article.articles.find(((art) => art.id == artID && art.email == userEmail));
+    if (!specific) return false;
+    return specific;
+  }
 }
 export default Articles;

@@ -4,8 +4,9 @@ import inputChecker from '../middleware/Validation';
 import artController from '../controllers/articleController';
 
 const router = Router();
-router
-  .post('/article', authorize, inputChecker.createArticle, artController.postArticle)
-  .get('/article', authorize, artController.getAll);
+
+router.post('/api/v1/article', authorize, inputChecker.createArticle, artController.postArticle);
+router.get('/api/v1/article', authorize, artController.getAll);
+router.get('/api/v1/article/:id', authorize, inputChecker.getSpecificArticle, artController.getSpecific);
 
 export default router;
