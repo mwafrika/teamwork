@@ -7,7 +7,7 @@
     "start": "nodemon index --exec babel-node --presets @babel/preset-env",
     "test": " nyc _mocha ./Server/test/*.js --recursive --require @babel/polyfill  --require @babel/register --no-timeout --exit",
     "generate-lcov": "nyc report --reporter=lcov --reporter=text",
-    "coverage": "nyc npm test && npm run generate-lcov ",
+    "coverage": "nyc npm test && npm run generate-lcov",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info"
   },
   "repository": {
@@ -31,11 +31,14 @@
     "@babel/register": "^7.6.0",
     "@babel/runtime": "^7.6.0",
     "babel-node": "0.0.1-security",
+    "chai-things": "^0.2.0",
+
     "codeclimate-test-reporter": "^0.5.1",
     "coveralls": "^3.0.6",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "have": "^0.4.0",
     "istanbul": "^0.4.5",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^6.2.0",
@@ -43,7 +46,6 @@
     "nodemon": "^1.19.2",
     "nyc": "^14.1.1",
     "should": "^13.2.3",
-
     "swagger-ui-express": "^4.1.0"
   },
   "dependencies": {

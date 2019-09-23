@@ -1,7 +1,6 @@
 import chai, { expect } from 'chai';
 import chaiHtpp from 'chai-http';
 import should from 'should';
-
 import app from '../../index';
 
 chai.use(chaiHtpp);
@@ -23,7 +22,6 @@ describe('User should be able to signup', () => {
         expect(res.body).to.be.a('object');
         expect(res.status).to.equal(201);
         expect(res.body).to.have.key(['token']);
-
         done();
       });
   });
@@ -335,4 +333,3 @@ describe('should be able to signin', () => {
       });
   });
 });
-
