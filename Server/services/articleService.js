@@ -38,7 +38,6 @@ class Articles {
     findArt.article = articl;
     findArt.title = title;
     findArt.article.slice(artIndex, 1, findArt); // to be reviewed to add 2
-
     return findArt;
   }
 }
