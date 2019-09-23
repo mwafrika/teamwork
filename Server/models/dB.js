@@ -41,7 +41,7 @@ export default {
     title: 'entrepreneurship for all',
     article: 'This is to invite you all to participate to our upcoming event that will take place at Convetion center',
     createdOn: new Date().toLocaleString(),
-    email: 'mwe@gmail.com',
+    email: 'mwafrikajosue@gmail.com',
   },
   {
     id: 2,
