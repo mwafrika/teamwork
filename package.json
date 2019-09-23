@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": " nyc mocha ./Server/test/*.js",
-    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test"
+    "start": "nodemon index --exec babel-node --presets @babel/preset-env",
+    "test": " nyc _mocha ./Server/test/*.js --recursive --require @babel/polyfill  --require @babel/register --no-timeout --exit",
+    "generate-lcov": "nyc report --reporter=text-lcov >lcov.info",
+    "coverage": "nyc npm test && npm run generate-lcov && npm run codeclimate-coverage",
+    "codeclimate-coverage": "codeclimate-test-reporter < lcov.info"
   },
   "repository": {
     "type": "git",
@@ -22,25 +25,31 @@
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.6.1",
+    "@babel/plugin-transform-runtime": "^7.6.0",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/register": "^7.6.0",
-    "body-parser": "^1.19.0",
+    "@babel/runtime": "^7.6.0",
+    "babel-node": "0.0.1-security",
+    "codeclimate-test-reporter": "^0.5.1",
     "coveralls": "^3.0.6",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "express": "^4.17.1",
     "istanbul": "^0.4.5",
     "jsonwebtoken": "^8.5.1",
+    "mocha": "^6.2.0",
     "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.19.2",
     "nyc": "^14.1.1",
-    "swagger-ui-express": "^4.1.0",
-    "mocha": "^6.2.0"
+    "swagger-ui-express": "^4.1.0"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "dotenv": "^8.1.0",
+    "express": "^4.17.1",
     "travis": "^0.1.1"
   }
 }
