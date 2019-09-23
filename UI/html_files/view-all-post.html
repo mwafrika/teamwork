@@ -200,8 +200,8 @@
 
                     <div class="dropdown" id="menu-container">
                         <img src="../images/nut-icon.png " class="dropb" id="pho_swicth"
-                            style="height:20px;width:20px; border-radius:50%;" onclick="myFunction()">
-                        <div id="drp" class="drop-content">
+                            style="height:20px;width:20px; border-radius:50%;" onclick="DropDown()">
+                        <div id="drop-cont" class="drop-content">
                             <a href="#" id="openModal">Edit post</a>
                             <a href="#" id="deletePost">Delete post</a>
                         </div>
@@ -298,7 +298,7 @@
                     <!-- confirm update -->
                     <div id="myModal2" class="modal1">
 
-                        <div class="modal-content4">
+                        <div class="modal-content4" id="modcont">
                             <span class="close2">&times;</span>
                             <p>Are you sure to delete this Post ?</p>
                             <button class="approve1" id="btnDel"><b>Confirm deletion</b> </button>
@@ -396,10 +396,10 @@
 
                     <div class="dropdown" id="menu-container">
                         <img src="../images/nut-icon.png " class="dropb" id="pho_swicth"
-                            style="height:20px;width:20px; border-radius:50%;" onclick="myFunction1()">
-                        <div id="drp1" class="drop-content">
-                            <a href="#" id="myBut">Edit post</a>
-                            <a href="#">Delete post</a>
+                            style="height:20px;width:20px; border-radius:50%;" onclick="DropDown1()">
+                        <div id="drop-cont1" class="drop-content">
+                            <a href="#" id="openModal">Edit post</a>
+                            <a href="#" id="deletePost">Delete post</a>
                         </div>
                         </img>
                     </div>
@@ -542,15 +542,17 @@
                         </div>
 
                     </div>
+
                     <div class="dropdown" id="menu-container">
                         <img src="../images/nut-icon.png " class="dropb" id="pho_swicth"
-                            style="height:20px;width:20px; border-radius:50%;" onclick="function2()">
-                        <div id="drp2" class="drop-content">
-                            <a href="#" id="myBut1">Edit post</a>
-                            <a href="#">Delete post</a>
+                            style="height:20px;width:20px; border-radius:50%;" onclick="DropDown2()">
+                        <div id="drop-cont2" class="drop-content">
+                            <a href="#" id="openModal">Edit post</a>
+                            <a href="#" id="deletePost">Delete post</a>
                         </div>
                         </img>
                     </div>
+
                     <div id="myModal1" class="modal">
                         <div class="modal-content">
 
@@ -591,8 +593,6 @@
 
                         </div>
                     </div>
-
-
                     <!-- confirm update -->
                     <div id="myModal1" class="modal1">
 
