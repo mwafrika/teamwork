@@ -87,4 +87,15 @@ describe('Articles', () => {
         done();
       });
   });
+  it('should get all the articles', (done) => {
+    chai.request(app)
+      .get('/article')
+      .send(data)
+      .set('Authorization', token)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        done();
+      });
+  });
+
 });

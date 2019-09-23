@@ -5,6 +5,7 @@ import artController from '../controllers/articleController';
 
 const router = Router();
 router
-  .post('/article', authorize, inputChecker.createArticle, artController.postArticle);
+  .post('/article', authorize, inputChecker.createArticle, artController.postArticle)
+  .get('/article', authorize, artController.getAll);
 
 export default router;

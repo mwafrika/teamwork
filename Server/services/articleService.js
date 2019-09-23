@@ -5,11 +5,15 @@ import '@babel/polyfill';
 class Articles {
   static postArticle(data) {
     const newArticle = {
-      id: article.articles.length,
+      id: article.articles.length + 1,
       ...data,
     };
     article.articles.push(newArticle);
     return newArticle;
+  }
+
+  static getAllArticles() {
+    return article.articles.sort((a, b) => b.id - a.id);
   }
 }
 export default Articles;
