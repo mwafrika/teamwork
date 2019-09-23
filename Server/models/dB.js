@@ -41,21 +41,21 @@ export default {
     title: 'entrepreneurship for all',
     article: 'This is to invite you all to participate to our upcoming event that will take place at Convetion center',
     createdOn: new Date().toLocaleString(),
-    email: 'mwafrikajosue@gmail.com',
+    email: 'mwe@gmail.com',
   },
   {
     id: 2,
     title: 'international student',
     article: 'Thank you for having you participate to our great event that is still in progress!!! thank you once again and may God bless you all',
     createdOn: new Date().toLocaleString(),
-    email: 'kakule@gmail.com',
+    email: 'jose@gmail.com',
   },
   {
     id: 3,
     title: 'Important notification',
     article: 'we thank you for your participation to the Andela boocamp cycle 10, for that we are very sorry to tell you that we cannot extend your fellowship ...',
     createdOn: new Date().toLocaleString(),
-    email: 'mwafrikajosue@gmail.com',
+    email: 'trey@gmail.com',
   }],
   comments: [
     {
