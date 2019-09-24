@@ -46,18 +46,18 @@ const emptyArticle = {
   title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
   article: '',
 };
-const articleNotFound = {
-  id: 8,
-  title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
-  article: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  email: 'mwafrikajosue@gmail.com',
+const emptyComment = {
+  comment: '',
+  artID: 3,
 };
-const articleOwner = {
-  id: 1,
-  email: 'mwafrikajosue@gmail.com',
-  password: '123456',
+const emptyArticl = {
+  comment: ' my darling',
+  artID: '',
 };
-const nothing = db.articles[-1];
+const postComm = {
+  comment: 'my brother',
+  artID: 3,
+};
 
 describe('Articles', () => {
   it('should create an article', (done) => {
@@ -195,18 +195,52 @@ describe('Articles', () => {
         expect(res.body.error).to.equal('article cannot be empty');
         done();
       });
-
-  // it('should not delete an article that does not belong to user', (done) => {
-  //   chai.request(app)
-  //     .delete('/api/v1/article/:id', token)
-  //     .set('Authorization', token)
-  //     .send({ id: 2 })
-  //     .end((err, res) => {
-  //       expect(res.status).to.equal(404);
-  //       expect(res.body.error).to.equal('Article not found');
-  //       console.log(res.message);
-  //       done();
-  //     });
-  // });
+  });
+  it('should not post a comment with empty field', (done) => {
+    chai.request(app)
+      .post('/api/v1/article/:artID/comments')
+      .set('Authorization', token)
+      .send({ comment: '' })
+      .end((error, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('comment cannot be empty');
+        done();
+      });
+  });
+  it('should not post the article with numerical ID', (done) => {
+    chai.request(app)
+      .post('/api/v1/article/:artID/comments')
+      .set('Authorization', token)
+      .send({ artID: 'y' })
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(422);
+        expect(res.body.error).to.equal('article ID must be a number');
+        done();
+      });
+  });
+  it('should successfully post a comment', (done) => {
+    chai.request(app)
+      .post('/api/v1/article/:artID/comments')
+      .set('Authorization', token)
+      .send({ artID: 1, comment: 'yyyyyyy' })
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(200);
+        done();
+      });
+  });
+  it('should not find with empty field', (done) => {
+    chai.request(app)
+      .post('/api/v1/category')
+      .set('Authorization', token)
+      .send({ category: '' })
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('specify the category');
+        done();
+      });
   });
 });

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable eqeqeq */
 import article from '../models/dB';
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -17,8 +18,13 @@ class Articles {
     return article.articles.sort((a, b) => b.id - a.id);
   }
 
+  static getAllCategory(category) {
+    const myCategory = article.articles.filter((cat) => cat.category == category);
+    if (myCategory === -1) return false;
+    return myCategory;
+  }
+
   static getSpecific(artID, userEmail) {
-    // eslint-disable-next-line max-len
     const specific = article.articles.find(((art) => art.id == artID && art.email == userEmail));
     if (!specific) return false;
     return specific;
@@ -37,7 +43,7 @@ class Articles {
     const artIndex = article.articles.indexOf(findArt);
     findArt.article = articl;
     findArt.title = title;
-    findArt.article.slice(artIndex, 1, findArt); // to be reviewed to add 2
+    findArt.article.slice(artIndex, 1, findArt);
     return findArt;
   }
 }
