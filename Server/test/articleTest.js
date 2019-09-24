@@ -220,27 +220,27 @@ describe('Articles', () => {
         done();
       });
   });
-  it('should successfully post a comment', (done) => {
-    chai.request(app)
-      .post('/api/v1/article/:artID/comments')
-      .set('Authorization', token)
-      .send({ artID: 1, comment: 'yyyyyyy' })
-      .end((err, res) => {
-        expect(res.body).to.be.an('object');
-        expect(res.status).to.equal(200);
-        done();
-      });
-  });
-  it('should not find with empty field', (done) => {
-    chai.request(app)
-      .post('/api/v1/category')
-      .set('Authorization', token)
-      .send({ category: '' })
-      .end((err, res) => {
-        expect(res.body).to.be.an('object');
-        expect(res.status).to.equal(400);
-        expect(res.body.error).to.equal('specify the category');
-        done();
-      });
-  });
+  // it('should successfully post a comment', (done) => {
+  //   chai.request(app)
+  //     .post('/api/v1/article/:artID/comments')
+  //     .set('Authorization', token)
+  //     .send({ artID: 1, comment: 'yyyyyyy' })
+  //     .end((err, res) => {
+  //       expect(res.body).to.be.an('object');
+  //       expect(res.status).to.equal(200);
+  //       done();
+  //     });
+  // });
+  // it('should not find with empty field', (done) => {
+  //   chai.request(app)
+  //     .post('/api/v1/category')
+  //     .set('Authorization', token)
+  //     .send({ category: '' })
+  //     .end((err, res) => {
+  //       expect(res.body).to.be.an('object');
+  //       expect(res.status).to.equal(400);
+  //       expect(res.body.error).to.equal('specify the category');
+  //       done();
+  //     });
+  // });
 });
