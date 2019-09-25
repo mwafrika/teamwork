@@ -17,13 +17,15 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
   res.status(200).send({ status: 200, message: `Welcome to Teamwork!!! to access the swagger documentation for api version 1 please follow this link ${apiUrl} ` });
 });
-app.use('/api/v1/api-docs', swagerUI.serve, swagerUI.setup(swagger));
+
 // allow to show response at swaggerUI
 app.use((request, response, next) => {
   response.header('Access-Control-Allow-Origin', '*');
   response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
+app.use('/api/v1/api-docs', swagerUI.serve, swagerUI.setup(swagger));
+
 app.use(userRoute);
 app.use(articleRoutes);
 
