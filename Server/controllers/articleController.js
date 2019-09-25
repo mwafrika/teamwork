@@ -1,7 +1,7 @@
 import artService from '../services/articleService';
 import artHelper from '../helpers/articles';
 import ArticleHelper from '../helpers/articles';
-import db from '../models/dB';
+import commentController from './commentController';
 
 const artController = {
   async postArticle(req, res) {

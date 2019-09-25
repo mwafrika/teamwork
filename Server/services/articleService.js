@@ -3,6 +3,7 @@
 import article from '../models/dB';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import '@babel/polyfill';
+import comment1 from './commentService';
 
 class Articles {
   static postArticle(data) {
