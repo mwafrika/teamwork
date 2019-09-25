@@ -2,13 +2,13 @@
   "openapi": "3.0.0",
   "info": {
     "title": "TeamWork",
-    "description": "```\nTeamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. \n```",
+    "description": "\nTeamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. \n",
     "contact": {},
     "version": "1.0"
   },
   "servers": [
     {
-      "url": "http://localhost:7000",
+      "url": "https://app.swaggerhub.com/",
       "variables": {}
     }
   ],
