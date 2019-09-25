@@ -10,8 +10,8 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.get('/', (res, req) => {
-  res.status(200).json({ status: 200, message: 'Welcome to Teamwork' });
+app.get('/', (req, res) => {
+  res.status(200).send({ status: 200, message: 'Welcome to Teamwork' });
 });
 app.use(userRoute);
 app.use(articleRoutes);
