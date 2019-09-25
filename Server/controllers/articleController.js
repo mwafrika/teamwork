@@ -28,7 +28,7 @@ const artController = {
     const { category } = req.body;
 
     const findmatch = await artService.getAllCategory(category);
-    if (!findmatch) return res.status(404).send({ status: 404, message: 'No such category is available' });
+    if (findmatch.length < 1) return res.status(404).send({ status: 404, message: 'No such category is available' });
     return res.status(200).send({
       status: 200,
       data: findmatch,
