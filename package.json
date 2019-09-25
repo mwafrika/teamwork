@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
     "dev-start": "nodemon index --exec babel-node --presets @babel/preset-env",
     "test": " nyc _mocha ./Server/test/*.js --recursive --require @babel/polyfill  --require @babel/register --no-timeout --exit",
     "generate-lcov": "nyc --reporter=lcov --reporter=text-lcov npm test | coveralls",
     "coverage": "nyc npm test && npm run generate-lcov",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
-    "build": "rimraf dist && babel ./ -d dist --ignore node_modules,test,UI",
-    "start": "npm run build",
+    "build": "babel index.js --out-dir build",
+    "start": "babel-node index.js",
     "deploy": "gh-pages -d UI"
   },
   "repository": {
