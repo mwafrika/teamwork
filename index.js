@@ -19,11 +19,15 @@ app.get('/', (req, res) => {
 });
 
 // allow to show response at swaggerUI
-app.use((request, response, next) => {
-  response.header('Access-Control-Allow-Origin', '*');
-  response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-methods', 'GET, PUT, PATCH, POST, DELETE');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
+
 app.use('/api/v1/api-docs', swagerUI.serve, swagerUI.setup(swagger));
 
 app.use(userRoute);

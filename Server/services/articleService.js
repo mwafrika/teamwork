@@ -25,15 +25,19 @@ class Articles {
     return myCategory;
   }
 
-  static getSpecific(artID, userEmail) {
+  static getSpecific(artID, userEmail, comment) {
     const specific = article.articles.find(((art) => art.id == artID && art.email == userEmail));
-    if (!specific) return false;
-    return specific;
+    const details = {
+      ...specific,
+      comment,
+    };
+    if (!details) return false;
+    return details;
   }
 
   static deleteArticle(id, email) {
     const findArticle = article.articles.findIndex(((art) => art.id == id && art.email == email));
-    if (findArticle === -1) return false;
+    if (findArticle === -1 || !findArticle) return false;
     return article.articles.splice(findArticle, 1);
   }
 
