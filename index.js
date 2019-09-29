@@ -15,12 +15,12 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(cors());
 app.get('/', (req, res) => {
   res.status(200).send({ status: 200, message: `Welcome to Teamwork!!! to access the swagger documentation for api version 1 please follow this link ${apiUrl} ` });
 });
 
 // allow to show response at swaggerUI
-app.use(cors);
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-methods', 'GET, PUT, PATCH, POST, DELETE');
