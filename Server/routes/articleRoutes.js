@@ -11,5 +11,6 @@ router
   .get('/api/v1/article/:id', authorize, inputChecker.getSpecificArticle, artController.getSpecific)
   .delete('/api/v1/article/:id', authorize, inputChecker.getSpecificArticle, artController.deleteArticle)
   .patch('/api/v1/article/:id/title/article', authorize, inputChecker.editVerify, artController.editArticle)
-  .post('/api/v1/article/:artID/comments', authorize, commentController);
+  .post('/api/v1/article/:artID/comments', authorize, inputChecker.commentVerify, commentController)
+  .get('/api/v1/category', authorize, inputChecker.ArticleCategory, artController.getCategory);
 export default router;

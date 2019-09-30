@@ -42,6 +42,7 @@ export default {
     article: 'This is to invite you all to participate to our upcoming event that will take place at Convetion center',
     createdOn: new Date().toLocaleString(),
     email: 'mwafrikajosue@gmail.com',
+    category: 'education',
   },
   {
     id: 2,
@@ -49,6 +50,7 @@ export default {
     article: 'Thank you for having you participate to our great event that is still in progress!!! thank you once again and may God bless you all',
     createdOn: new Date().toLocaleString(),
     email: 'jose@gmail.com',
+    category: 'education',
   },
   {
     id: 3,
@@ -56,6 +58,7 @@ export default {
     article: 'we thank you for your participation to the Andela boocamp cycle 10, for that we are very sorry to tell you that we cannot extend your fellowship ...',
     createdOn: new Date().toLocaleString(),
     email: 'trey@gmail.com',
+    category: 'politics',
   }],
   comments: [
     {
@@ -88,6 +91,29 @@ export default {
       createdOn: '11/12/2018',
       reason: 'not true',
       description: 'this article was not published for international students only',
+    },
+  ],
+  artileCategory: [
+    {
+      id: 1,
+      artID: 3,
+      category: 'education',
+      articleTitle: 'Dissertation',
+      article: 'all the third year students need to defend',
+    },
+    {
+      id: 1,
+      artID: 3,
+      category: 'education',
+      articleTitle: 'Dissertation',
+      article: 'all the third year students need to defend',
+    },
+    {
+      id: 1,
+      artID: 3,
+      category: 'politics',
+      articleTitle: 'Dissertation',
+      article: 'all the third year students need to defend',
     },
   ],
 };

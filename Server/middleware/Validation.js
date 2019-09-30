@@ -1,3 +1,4 @@
+import { isString } from 'util';
 import Validator from './validateInputs';
 
 class ValidateInfo {
@@ -62,5 +63,24 @@ class ValidateInfo {
 
     return next();
   }
+
+  static commentVerify(req, res, next) {
+    const { artID } = req.params;
+    const { comment } = req.body;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (Validator.checkEmpty(artID)) return response('please specify the article ID', 400);
+    if (Validator.checkEmpty(comment)) return response('comment cannot be empty', 400);
+    if (isNaN(artID)) return response('article ID must be a number', 422);
+    return next();
+  }
+
+  static ArticleCategory(req, res, next) {
+    const { category } = req.body;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (Validator.checkEmpty(category)) return response('specify the category', 400);
+    if (!isString(category)) return response('category must be a string', 400);
+    return next();
+  }
+
 }
 export default ValidateInfo;

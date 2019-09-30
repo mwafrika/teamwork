@@ -24,6 +24,16 @@ const artController = {
   getAll(req, res) {
     return artHelper.getAllarticle(res);
   },
+  async getCategory(req, res) {
+    const { category } = req.body;
+
+    const findmatch = await artService.getAllCategory(category);
+    if (findmatch.length < 1) return res.status(404).send({ status: 404, message: 'No such category is available' });
+    return res.status(200).send({
+      status: 200,
+      data: findmatch,
+    });
+  },
   async getSpecific(req, res) {
     const { email } = req.user; // email of authenticated user
     const { id } = req.params;
@@ -61,5 +71,6 @@ const artController = {
       data: editArt,
     });
   },
+
 };
 export default artController;
