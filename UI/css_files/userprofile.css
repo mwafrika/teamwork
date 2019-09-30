@@ -421,6 +421,12 @@ form input {
   border: none;
   /* border: 1px solid white; */
 }
+#about{
+  background-color: white;
+}
+/* .barmenu ul a{
+  color: #34495e;
+} */
 li a:hover {
   color: black;
   background-color: white;
