@@ -1,0 +1,510 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TeamWork",
+    "description": "\nTeamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. \n",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://app.swaggerhub.com/",
+      "variables": {}
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/api/v1/auth/signup": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Signup",
+        "description": "Employees can create their own account",
+        "operationId": "Signup",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "text/plain"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "firstName",
+                  "lastName",
+                  "email",
+                  "password",
+                  "department",
+                  "JobRole",
+                  "gender",
+                  "isAdmin"
+                ],
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string",
+                    "example": "job"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "jioo"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "jijw8@gmail.com"
+                  },
+                  "password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 7777
+                  },
+                  "department": {
+                    "type": "string",
+                    "example": "it"
+                  },
+                  "JobRole": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "example": "mn"
+                  },
+                  "isAdmin": {
+                    "type": "string",
+                    "example": "t"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/auth/signin": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "signin",
+        "description": "Employees can Signin to their account",
+        "operationId": "Signin",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "text/plain"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "email",
+                  "password"
+                ],
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "mwafrikajosue @gmail.com"
+                  },
+                  "password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 123456
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/article/{id}/title": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Post Article",
+        "description": "Employees can post their articles ",
+        "operationId": "PostArticle",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "text/plain"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "email",
+                  "article"
+                ],
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "mwafriksa@gmail.com"
+                  },
+                  "article": {
+                    "type": "string",
+                    "example": "mayaya"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/article": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Get All Articles",
+        "description": "Employee can get All the articles",
+        "operationId": "GetAllArticles",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJrYWt1bGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0IiwiaXNBZG1pbiI6ImYiLCJpYXQiOjE1Njg5MjIyOTF9.ZJdGb8Y4tCUCxSev5yxru020X8V_2Ini64Wosd9yeDg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/api/v1/article/{id}": {
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Delete Article",
+        "description": "Employee can delete the article",
+        "operationId": "DeleteArticle",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/article/{id}/title/article": {
+      "patch": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Edit an Article",
+        "description": "Employee can Edit articles",
+        "operationId": "EditAnArticle",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtd2FmcmlrYWpvc3VlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaXNBZG1pbiI6InQiLCJpYXQiOjE1NjkwNzc0ODF9.sqw0KCNwVEpG2AX0jxJF1K71canaVYRc-wvYMWMho2Y"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "title",
+                  "article"
+                ],
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "example": "janvier my freind"
+                  },
+                  "article": {
+                    "type": "string",
+                    "example": "azali ko yakobo"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/api/v1/article/{artID}/comments": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Post a comment",
+        "description": "Employee can post a comment",
+        "operationId": "PostAComment",
+        "parameters": [
+          {
+            "name": "artID",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 3
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtd2FmcmlrYWpvc3VlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaXNBZG1pbiI6InQiLCJpYXQiOjE1NjkxMjcwNzV9.Rd8_TgFZJWYLFWrqHIC8n-qDWB-JCoW8rQqOVdBJUs0"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "comment"
+                ],
+                "type": "object",
+                "properties": {
+                  "comment": {
+                    "type": "string",
+                    "example": "johnhihihihihih jjjjj"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/api/v1/category": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Get All matching category",
+        "description": "Employee can get all articles having the same category",
+        "operationId": "GetAllMatchingCategory",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtd2FmcmlrYWpvc3VlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaXNBZG1pbiI6InQiLCJpYXQiOjE1NjkyODgzNjl9.Z_8Sy2qCzsCx9OaYqfd5zeqVT6-JhUoCA8FIKZ8aiMs"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

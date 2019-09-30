@@ -1,17 +1,19 @@
 import artService from '../services/articleService';
 import artHelper from '../helpers/articles';
-import ArticleHelper from '../helpers/articles';
 import db from '../models/dB';
+import ArticleHelper from '../helpers/articles';
+import commentController from './commentController';
 
 const artController = {
   async postArticle(req, res) {
     const { email } = req.user;
-    const { title, article } = req.body;
+    const { title, article, category } = req.body;
     const newArt = {
       email,
       createdOn: new Date().toLocaleString(),
       title,
       article,
+      category,
     };
     const addArt = await artService.postArticle(newArt);
     return res.status(201).send({
@@ -37,19 +39,22 @@ const artController = {
   async getSpecific(req, res) {
     const { email } = req.user; // email of authenticated user
     const { id } = req.params;
+  
+    const comment = db.comments;
 
-    const findArticle = await artService.getSpecific(id, email);
+    const findArticle = await artService.getSpecific(id, email, comment);
     if (!findArticle) return res.status(404).send({ status: 'error', error: 'Article not found, please try another' });
 
     return res.status(200).send({
       status: 'success',
       data: findArticle,
+      // comment,
     });
   },
   async deleteArticle(req, res) {
     const { id } = req.params;
     const { email } = req.user;
-    const findArticle = artService.deleteArticle(id, email);
+    const findArticle = await artService.deleteArticle(id, email);
     if (findArticle === -1 || !findArticle) return res.status(404).send({ status: 404, error: 'Article not found' });
     return res.status(204).send({
       status: 204,

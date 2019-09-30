@@ -64,17 +64,20 @@ export default {
     {
       id: 1,
       artID: 3,
+      userID: 1,
       comment: 'keep it up my bro',
     },
     {
       id: 2,
       artID: 1,
       comment: 'receive in the name of Jesus, Take it!!!',
+      userID: 2,
     },
     {
       id: 3,
       artID: 4,
       comment: 'thank you for your support dear',
+      userID: 2,
     },
   ],
   flag: [

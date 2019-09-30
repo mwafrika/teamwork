@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import chai, { expect } from 'chai';
 import chaihttp from 'chai-http';
 import chaiThings from 'chai-things';
