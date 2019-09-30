@@ -141,7 +141,7 @@ body {
   border-radius: 50%;
   position: absolute;
   top: 10%;
-  left: 80%;
+  left: 75%;
   display: flex;
   flex-direction: row;
 }
@@ -518,15 +518,13 @@ li a:hover {
 .main_div {
   background-color: white;
   transition: margin-left 0.5s;
-  padding: 30px 40px;
-  width: 90%;
+  padding: 30px 2px;
+  width: 100%;
   border-radius: 5px;
-  margin-left: 50px;
-  margin-right: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .card1 {
@@ -541,7 +539,7 @@ li a:hover {
 }
 .card2 {
   position: relative;
-  width: 600px;
+  width: 500px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   font-family: inherit;
@@ -571,7 +569,7 @@ li a:hover {
 
 .card3 {
   position: relative;
-  width: 415px;
+  width: 408px;
   /* height: 300px; */
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -733,6 +731,7 @@ li a:hover {
 .client {
   position: relative;
   width: 100%;
+  /* margin-right: 8px; */
 }
 
 #post-element,
