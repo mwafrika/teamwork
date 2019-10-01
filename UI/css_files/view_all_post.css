@@ -362,12 +362,99 @@ form input {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   margin-bottom: 10px;
 }
+.social p{
+  font-size: 18px;
+}
+.status-content{
+  font-size: 16px;
+}
+.names9{
+  margin: 20px 7px 10px 10px;
+}
+.names99{
+  margin: 20px 123px 10px 10px;
+}
+.online9{
+  margin: 30px 7px 10px 10px;
+}
+.names8{
+  margin: 20px 7px 10px 10px;
+}
+.names88{
+  margin: 20px 129px 10px 10px;
+}
+.online8{
+  margin: 30px 7px 10px 10px;
+}
+.names7{
+  margin: 20px 7px 10px 10px;
+}
+.names77{
+  margin: 20px 142px 10px 10px;
+}
+.online7{
+  margin: 30px 7px 10px 10px;
+}
+.names6{
+  margin: 20px 7px 10px 10px;
+}
+.names66{
+  margin: 20px 117px 10px 10px;
+}
+.online6{
+  margin: 30px 7px 10px 10px;
+}
+.names5{
+  margin: 20px 7px 10px 10px;
+}
+.names55{
+  margin: 20px 115px 10px 10px;
+}
+.online5{
+  margin: 30px 7px 10px 10px;
+}
+.names4{
+  margin: 20px 7px 10px 10px;
+}
+.names44{
+  margin: 20px 103px 10px 10px;
+}
+.online4{
+  margin: 30px 7px 10px 10px;
+}
+.names3{
+  margin: 20px 7px 10px 10px;
+}
+.names33{
+  margin: 20px 117px 10px 10px;
+}
+.online3{
+  margin: 30px 7px 10px 10px;
+}
 .names p {
   line-height: 0.5;
   margin-left: 2px;
   text-align: center;
   font-weight: bolder;
   color: grey;
+}
+.online2{
+  margin: 30px 7px 10px 10px;
+}
+.names22{
+  margin: 20px 142px 10px 10px;
+}
+.online1{
+  margin: 30px 7px 10px 10px;
+}
+.names2{
+  margin: 20px 7px 10px 10px;
+}
+.names1{
+  margin: 20px 7px 10px 10px;
+}
+.names11{
+  margin: 20px 110px 10px 10px;
 }
 
 .add button {
@@ -487,10 +574,9 @@ li a:hover {
 #imgField img {
   height: 20px;
   width: 20px;
-  left: auto;
+  left: 92%;
   position: absolute;
   top: 11%;
-  margin: 3px;
 }
 #bar {
   position: relative;
@@ -732,7 +818,7 @@ li a:hover {
 .client {
   position: relative;
   width: 100%;
-  /* margin-right: 8px; */
+  margin-right: 8px;
 }
 
 #post-element,
@@ -740,7 +826,6 @@ li a:hover {
 #right-side {
   display: block;
 }
-
 #left-card {
   width: 250px;
 }
@@ -781,6 +866,15 @@ li a:hover {
   left: -2px;
 }
 
+/* .drop-content {
+  z-index: 1;
+  display: none; 
+  position: absolute; 
+  background-color: #f9f9f9; 
+  min-width: 140px; 
+  overflow: auto; 
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+} */
 .drop-content1 {
   display: none;
   position: absolute;
@@ -849,32 +943,6 @@ li a:hover {
     border-bottom: 1px solid white;
   }
 }
-@media only screen and (max-width: 401px) {
-  #left-side {
-    display: block;
-}
-}
-@media only screen and (max-width: 747px) {
-  .card1 {
-    position: relative;
-    width: 480px;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 12px;
-    margin-bottom: 0.8em;
-    box-shadow: none;
-}
-#left-side {
-  display: block;
-  /* flex-direction: row; */
-}
-}
-@media only screen and (max-midth: 758px){
-#right-side{
-  margin-left: 500px;
-}
-}
-
 @media only screen and (max-width: 1333px) {
   .profilepic {
     background-image: url(../images/images2.png);
@@ -900,7 +968,7 @@ li a:hover {
 @media only screen and (max-width: 778px) {
   .card3 {
     position: relative;
-    width: 500px;
+    width: 600px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     font-family: inherit;
@@ -915,16 +983,6 @@ li a:hover {
     border-radius: 50%;
     background: 1px solid bblue;
   }
-  #pong1{
-    display: none;
-  }
-  #post-element, #left-side, #right-side {
-    display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-}
 
   .myleft {
     display: contents;

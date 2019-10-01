@@ -519,6 +519,9 @@ body {
     font-size: 12px;
     margin-bottom: 0.8em;
   }
+  .searche{
+    display: flex;flex-direction: row;justify-content: space-between; width: 100%;
+  }
   
   .card2 .card-header2 {
     widows: 100%;
