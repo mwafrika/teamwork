@@ -584,6 +584,9 @@ li a:hover {
   padding: 0.8em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
+.not1{
+  cursor: pointer;
+}
 .card3 .align-col {
   display: grid;
   position: relative;
