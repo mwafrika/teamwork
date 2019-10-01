@@ -435,9 +435,10 @@ li a:hover {
 #imgField img {
   height: 20px;
   width: 20px;
-  left: 92%;
+  left: auto;
   position: absolute;
   top: 11%;
+  margin-left: 5px;
 }
 #bar {
   position: relative;
@@ -464,18 +465,19 @@ li a:hover {
   left: 5%;
   border-radius: 50%;
 }
+.spac{
+  margin-left: 10px;
+}
 .main_div {
   background-color: white;
   transition: margin-left 0.5s;
-  padding: 30px 40px;
-  width: 90%;
+  padding: 30px 2px;
+  width: 100%;
   border-radius: 5px;
-  margin-left: 50px;
-  margin-right: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .card1 {
@@ -581,6 +583,9 @@ li a:hover {
 .card3 .align-col {
   display: grid;
   position: relative;
+}
+#hom{
+margin-top: 10px;
 }
 .card-footer {
   padding: 5px 1em;

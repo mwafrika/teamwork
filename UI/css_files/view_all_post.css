@@ -487,9 +487,10 @@ li a:hover {
 #imgField img {
   height: 20px;
   width: 20px;
-  left: 92%;
+  left: auto;
   position: absolute;
   top: 11%;
+  margin: 3px;
 }
 #bar {
   position: relative;
@@ -739,6 +740,7 @@ li a:hover {
 #right-side {
   display: block;
 }
+
 #left-card {
   width: 250px;
 }
@@ -779,15 +781,6 @@ li a:hover {
   left: -2px;
 }
 
-/* .drop-content {
-  z-index: 1;
-  display: none; 
-  position: absolute; 
-  background-color: #f9f9f9; 
-  min-width: 140px; 
-  overflow: auto; 
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
-} */
 .drop-content1 {
   display: none;
   position: absolute;
@@ -856,6 +849,32 @@ li a:hover {
     border-bottom: 1px solid white;
   }
 }
+@media only screen and (max-width: 401px) {
+  #left-side {
+    display: block;
+}
+}
+@media only screen and (max-width: 747px) {
+  .card1 {
+    position: relative;
+    width: 480px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 12px;
+    margin-bottom: 0.8em;
+    box-shadow: none;
+}
+#left-side {
+  display: block;
+  /* flex-direction: row; */
+}
+}
+@media only screen and (max-midth: 758px){
+#right-side{
+  margin-left: 500px;
+}
+}
+
 @media only screen and (max-width: 1333px) {
   .profilepic {
     background-image: url(../images/images2.png);
@@ -881,7 +900,7 @@ li a:hover {
 @media only screen and (max-width: 778px) {
   .card3 {
     position: relative;
-    width: 600px;
+    width: 500px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     font-family: inherit;
@@ -896,6 +915,16 @@ li a:hover {
     border-radius: 50%;
     background: 1px solid bblue;
   }
+  #pong1{
+    display: none;
+  }
+  #post-element, #left-side, #right-side {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
 
   .myleft {
     display: contents;

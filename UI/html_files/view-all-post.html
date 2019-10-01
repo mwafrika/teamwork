@@ -18,8 +18,8 @@
             <div style="display: flex;flex-direction: row;justify-content: space-between; width: 100%;">
 
                 <div style="width:30%; height:inherit;" class="logo">
-                    <img src="../images/hom.png" alt="">
-                    <img src="../images/add-friend.png" alt="" id="freinds">
+                   <!-- <a href="../html_files/homepage.html"><img src="../images/hom.png" alt=""></a> 
+                    <img src="../images/add-friend.png" alt="" id="freinds"> -->
                 </div>
 
                 <div style="width:33%; height:inherit;" id="bar">
@@ -41,18 +41,20 @@
                         <img src="../images/notification.png" alt="">
                     </div>
 
-                    <div id="switch" class="notify">
-                        <div class="dropdown">
-                            <img src="../images/user.png" id="pho_swicth"
-                                style="height:30px;width:30px; border-radius:50%;" onclick="DropDown()" class="dropbtn">
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#agent" id="agent">Profile</a>
-                                <a href="#user" id="user">Settings</a>
-                                <a href="#logout" id="logout">Logout</a>
+                  <a href="../html_files/userprofile.html">
+                        <div id="switch" class="notify">
+                                <div class="dropdown">
+                                    <img src="../images/user.png" id="pho_swicth"
+                                        style="height:30px;width:30px; border-radius:50%;" onclick="DropDown()" class="dropbtn">
+                                    <div id="myDropdown" class="dropdown-content">
+                                        <a href="#agent" id="agent">Profile</a>
+                                        <a href="#user" id="user">Settings</a>
+                                        <a href="#logout" id="logout">Logout</a>
+                                    </div>
+                                    <!-- </img> -->
+                                </div>
                             </div>
-                            <!-- </img> -->
-                        </div>
-                    </div>
+                  </a>  
 
                 </div>
 
@@ -665,7 +667,7 @@
                 <div class="card-header3">
                     <div class="status title1">
                         <span class="status-content" id="status-content1"><b>
-                                <p>Find People you may know</p>
+                                <p>Find more employees</p>
                             </b> </span>
                     </div>
                 </div>
@@ -710,7 +712,7 @@
                         </div>
                         <button><b>Add</b> </button>
                     </div>
-                    <div class="add">
+                    <div class="add" id="pong1">
                         <img src="../images/prof3.jpg" alt="">
                         <div class="names">
                             <p>Ponga</p>
