@@ -1,6 +1,5 @@
 import chai, { expect } from 'chai';
 import chaiHtpp from 'chai-http';
-import should from 'should';
 import app from '../../index';
 
 chai.use(chaiHtpp);
@@ -12,16 +11,15 @@ describe('User should be able to signup', () => {
       .send({
         firstName: 'mwafrika',
         lastName: 'josue',
-        email: 'mwafrikajose@gmail.com',
-        password: 'mwa123',
+        email: 'mwafrikajosue@gmail.com',
+        password: '123',
         gender: 'male',
         jobRole: 'IT manager',
         department: 'IT',
-        address: 'Gisenyi',
       }).end((err, res) => {
         expect(res.body).to.be.a('object');
         expect(res.status).to.equal(201);
-        expect(res.body).to.have.key(['token']);
+        expect(res.body).to.have.key(['token', 'id', 'firstName', 'lastName', 'email', 'jobRole']);
         done();
       });
   });
@@ -287,7 +285,7 @@ describe('should be able to signin', () => {
     chai.request(app)
       .post('/api/v1/auth/signin')
       .send({
-        email: 'safi@gmail.com',
+        email: 'mwafrikajosue@gmail.com',
         password: '123',
       }).end((err, res) => {
         expect(res.status).to.equal(404);

@@ -16,8 +16,12 @@ class userController {
       });
     }
     return jwt.sign(signup, process.env.JWT_SECRET, (err, token) => {
+      // console.log(signup);
       res.status(201).send({
+        status: 201,
+        message: 'User account successfully created',
         token,
+        data: signup,
       });
     });
   }
@@ -27,13 +31,16 @@ class userController {
     const myUsers = userHelper.signin(user);
     if (!myUsers) {
       res.status(404).send({
-        status: 'error',
+        status: '404',
         error: 'invalid credentials!!! no user exist',
       });
     }
     return jwt.sign(myUsers, process.env.JWT_SECRET, (err, token) => {
       res.status(200).send({
+        status: 200,
+        myUsers: 'successfully logged in',
         token,
+        data: myUsers,
       });
     });
   }

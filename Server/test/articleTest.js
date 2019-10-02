@@ -15,10 +15,15 @@ let tokenAdmin;
 
 before((done) => {
   chai.request(app)
-    .post('/api/v1/auth/signin')
+    .post('/api/v1/auth/signup')
     .send({
       email: 'mwafrikajosue@gmail.com',
-      password: '123456',
+      password: '123',
+      firstName: 'jojo',
+      lastName: 'jack',
+      gender: 'male',
+      jobRole: 'IT',
+      department: 'IT',
     })
     .end((err, res) => {
       token = res.body.token;
@@ -28,7 +33,7 @@ before((done) => {
 });
 
 const data = {
-  id: 4,
+  id: 1,
   title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
   article: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   email: 'mwafrikajosue@gmail.com',
@@ -75,6 +80,7 @@ describe('Articles', () => {
         response.body.data.should.have.property('title').equal(data.title);
         response.body.data.should.have.property('article').equal(data.article);
         response.body.data.should.have.property('id').equal(data.id);
+
         response.body.data.should.have.property('email').equal(data.email);
         done();
       });

@@ -12,7 +12,7 @@ const apiUrl = 'https://teamwork1.herokuapp.com/api/v1/api-docs/';
 dotenv.config();
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cors());
