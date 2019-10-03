@@ -228,10 +228,7 @@ describe('Articles', () => {
     chai.request(app)
       .patch('/api/v1/article/1/title/article')
       .set('Authorization', token)
-      .send({
-        article : 'leleleleleleelelee',
-        title : 'je mange les bananes'
-      })
+      .send(articles[10])
       .end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.status).to.equal(200);
@@ -244,10 +241,7 @@ describe('Articles', () => {
     chai.request(app)
       .patch('/api/v1/article/0/title/article')
       .set('Authorization', token)
-      .send({
-        article : 'leleleleleleelelee',
-        title : 'je mange les bananes'
-      })
+      .send(articles[10])
       .end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.status).to.equal(404);
@@ -266,10 +260,10 @@ describe('Articles', () => {
       });
   });
   it('should successfully post a comment', (done) => {
-     chai.request(app)
-       .post('/api/v1/article/1/comments')
+    chai.request(app)
+      .post('/api/v1/article/1/comments')
       .set('Authorization', token)
-      .send({ artID: 1, comment: 'yyyyyyy' })
+      .send(articles[11])
       .end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.status).to.equal(200);
@@ -279,15 +273,15 @@ describe('Articles', () => {
   it('should successfully post a comment', (done) => {
     chai.request(app)
       .post('/api/v1/article/90/comments')
-     .set('Authorization', token)
-     .send({ artID: 1, comment: 'yyyyyyy' })
-     .end((err, res) => {
-       expect(res.body).to.be.an('object');
-       expect(res.status).to.equal(404);
-       done();
-     });
- });
-  
+      .set('Authorization', token)
+      .send(articles[11])
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(404);
+        done();
+      });
+  });
+
   it('should not delete an non iteger id', (done) => {
     chai.request(app)
       .delete('/api/v1/article/nn')
@@ -299,7 +293,7 @@ describe('Articles', () => {
         done();
       });
   });
- 
+
   it('should delete an article', (done) => {
     chai.request(app)
       .delete('/api/v1/article/1')

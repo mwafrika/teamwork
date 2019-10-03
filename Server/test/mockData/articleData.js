@@ -28,5 +28,11 @@ const articles = [
   { id: 'u' },
   { article: '' },
   { comment: '' },
+  {
+    article: 'leleleleleleelelee',
+    title: 'je mange les bananes',
+  },
+  { artID: 1, comment: 'yyyyyyy' },
+  
 ];
 export default articles;
