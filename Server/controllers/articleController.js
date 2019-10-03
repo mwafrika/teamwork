@@ -22,6 +22,7 @@ const artController = {
   },
 
   getAll(req, res) {
+    console.log(getAllarticle(res));
     return artHelper.getAllarticle(res);
   },
   async getCategory(req, res) {
@@ -66,7 +67,7 @@ const artController = {
     const { email } = req.user;
     const { article, title } = req.body;
     const { id } = req.params;
-
+    
     const editArt = artService.editArticles(email, parseInt(id, 10), article, title);
     if (!editArt) return res.status(404).send({ status: 'error', err: 'article not found' });
     return res.status(200).send({

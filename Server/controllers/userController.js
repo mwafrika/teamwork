@@ -30,9 +30,9 @@ class userController {
     const user = req.body;
     const myUsers = userHelper.signin(user);
     if (!myUsers) {
-      res.status(404).send({
-        status: '404',
-        error: 'invalid credentials!!! no user exist',
+      res.status(401).send({
+        status: '401',
+        error: 'invalid credentials!!',
       });
     }
     return jwt.sign(myUsers, process.env.JWT_SECRET, (err, token) => {

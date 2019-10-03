@@ -1,12 +1,13 @@
 const userData = {
   signup: [{
-    firstName: 'mwafrika',
-    lastName: 'josue',
-    email: 'mwafrikajosue@gmail.com',
+    firstName: 'jojo',
+    lastName: 'kaka',
+    email: 'mwafrika@gmail.com',
     password: '123',
     gender: 'male',
-    jobRole: 'IT manager',
-    department: 'IT',
+    jobRole: 'cord',
+    address: 'kivu',
+    department: 'cs',
   },
   {
     firstName: 'junior',
@@ -141,7 +142,7 @@ const userData = {
   ],
   login: [
     {
-      email: 'mwafrikajosu@gmail.com',
+      email: 'mwafrika@gmail.com',
       password: '123',
     },
     {
@@ -155,6 +156,10 @@ const userData = {
     {
       email: 'mwafri@gmail.com',
       password: '',
+    },
+    {
+      email: 'josjos@gmail.com',
+      password: 'jeje',
     },
   ],
 };

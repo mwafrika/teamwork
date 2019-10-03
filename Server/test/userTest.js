@@ -49,14 +49,14 @@ describe('User should be able to signup', () => {
         expect(res.body).to.be.a('object');
         console.log(res.status);
         expect(res.status).to.equal(201);
-        expect(res.body).to.have.key(['token', 'id', 'firstName', 'lastName', 'email']);
+        expect(res.body.data).to.have.keys(['id', 'firstName', 'lastName', 'email', 'jobRole']);
         done();
       });
   });
   it('should not allow user to signup with an existing email', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signup')
-      .send(mockUser.signup[1]).end((err, res) => {
+      .send(mockUser.signup[0]).end((err, res) => {
         expect(res.status).to.equal(400);
         expect(res.body.error).to.equal('email already exists');
         done();
@@ -181,9 +181,9 @@ describe('should be able to signin', () => {
   it('should not allow to signin with unregistered information', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signin')
-      .send(mockUser.login[0]).end((err, res) => {
-        expect(res.status).to.equal(404);
-        expect(res.body.error).to.equal('invalid credentials!!! no user exist');
+      .send(mockUser.login[4]).end((err, res) => {
+        expect(res.status).to.equal(401);
+        expect(res.body.error).to.equal('invalid credentials!!');
         done();
       });
   });
@@ -191,10 +191,10 @@ describe('should be able to signin', () => {
   it('should signin in successfully', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signin')
-      .send(mockUser.login[1]).end((err, res) => {
+      .send(mockUser.login[0]).end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.status).to.equal(200);
-        expect(res.body).to.have.key(['token', 'id', 'firstName', 'lastName', 'email']);
+        expect(res.body.data).to.have.key(['id', 'lastName', 'email']);
         console.log(res.body);
         done();
       });

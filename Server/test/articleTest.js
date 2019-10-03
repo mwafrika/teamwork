@@ -30,7 +30,7 @@ describe('Articles', () => {
   it('Should return an object with a message and 200 status when user accesses the root', (done) => {
     chai.request(app)
       .get('/')
-      .set('Authorization', 'application/json')
+      .set('Authorization', token)
       .end((err, res) => {
         // if (err) done(err);
         expect(res).to.have.status(200);
@@ -121,13 +121,14 @@ describe('Articles', () => {
       .send(articles[1])
       .set('Authorization', token)
       .end((err, res) => {
+        console.log(res.body);
         expect(res.body).to.be.an('object');
         done();
       });
   });
   it('should successfully get a specific article if the user is authenticated', (done) => {
     chai.request(app)
-      .get('/api/v1/article/:id')
+      .get('/api/v1/article/1')
       .send(articles[1])
       .set('Authorization', token)
       .end((err, res) => {
@@ -135,9 +136,19 @@ describe('Articles', () => {
         done();
       });
   });
+  it('should successfully get a specific article if the user is authenticated', (done) => {
+    chai.request(app)
+      .get('/api/v1/article/400')
+      .set('Authorization', token)
+      .end((err, res) => {
+        expect(res.status).to.equal(404);
+        expect(res.body.error).to.equal('Article not found, please try another');
+        done();
+      });
+  });
   it('should not get a specific article with a non integer value', (done) => {
     chai.request(app)
-      .get('/api/v1/article/:id')
+      .get('/api/v1/article/nnnn')
       .set('Authorization', token)
       .send(articles[3])
       .end((err, res) => {
@@ -148,7 +159,7 @@ describe('Articles', () => {
   });
   it('should not delete an non iteger id', (done) => {
     chai.request(app)
-      .delete('/api/v1/article/:id')
+      .delete('/api/v1/article/nn')
       .set('Authorization', token)
       .send(articles[4])
       .end((_err, res) => {
@@ -159,7 +170,7 @@ describe('Articles', () => {
   });
   it('should not delete if the employee is not logged in', (done) => {
     chai.request(app)
-      .delete('/api/v1/article/:id')
+      .delete('/api/v1/article/1')
       .set('Authorization', '')
       .end((err, res) => {
         expect(res.body.error).to.equal('You must be logged in to use this route');
@@ -169,7 +180,7 @@ describe('Articles', () => {
   });
   it('should not delete an article which does not belong to an employee', (done) => {
     chai.request(app)
-      .delete('/api/v1/article/:id')
+      .delete('/api/v1/article/1')
       .set('Autorization', token)
       .send(articles[5])
       .end((err, res) => {
@@ -180,7 +191,7 @@ describe('Articles', () => {
   });
   it('should not update an article with an invalid url parameter', (done) => {
     chai.request(app)
-      .patch('/api/v1/article/:id/title/article')
+      .patch('/api/v1/article/kkjkjjkkjj/title/article')
       .set('Authorization', token)
       .send(articles[6])
       .end((err, res) => {
@@ -189,20 +200,9 @@ describe('Articles', () => {
         done();
       });
   });
-  it('should not update an article with empty field', (done) => {
-    chai.request(app)
-      .patch('/api/v1/article/:id/title/article')
-      .set('Authorization', token)
-      .send(articles[8])
-      .end((err, res) => {
-        expect(res.status).to.equal(400);
-        expect(res.body.error).to.equal('article cannot be empty');
-        done();
-      });
-  });
   it('should not post a comment with empty field', (done) => {
     chai.request(app)
-      .post('/api/v1/article/:artID/comments')
+      .post('/api/v1/article/1/comments')
       .set('Authorization', token)
       .send(articles[9])
       .end((error, res) => {
@@ -212,9 +212,9 @@ describe('Articles', () => {
         done();
       });
   });
-  it('should not post the article with numerical ID', (done) => {
+  it('should not post the comment with non numerical ID', (done) => {
     chai.request(app)
-      .post('/api/v1/article/:artID/comments')
+      .post('/api/v1/article/lllo/comments')
       .set('Authorization', token)
       .send()
       .end((err, res) => {
@@ -224,27 +224,91 @@ describe('Articles', () => {
         done();
       });
   });
-  // it('should successfully post a comment', (done) => {
-  //   chai.request(app)
-  //     .post('/api/v1/article/:artID/comments')
-  //     .set('Authorization', token)
-  //     .send({ artID: 1, comment: 'yyyyyyy' })
-  //     .end((err, res) => {
-  //       expect(res.body).to.be.an('object');
-  //       expect(res.status).to.equal(200);
-  //       done();
-  //     });
-  // });
-  // it('should not find with empty field', (done) => {
-  //   chai.request(app)
-  //     .post('/api/v1/category')
-  //     .set('Authorization', token)
-  //     .send({ category: '' })
-  //     .end((err, res) => {
-  //       expect(res.body).to.be.an('object');
-  //       expect(res.status).to.equal(400);
-  //       expect(res.body.error).to.equal('specify the category');
-  //       done();
-  //     });
-  // });
+  it('should return a 200 status and the edited article', (done) => {
+    chai.request(app)
+      .patch('/api/v1/article/1/title/article')
+      .set('Authorization', token)
+      .send({
+        article : 'leleleleleleelelee',
+        title : 'je mange les bananes'
+      })
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(200);
+        expect(res.body.message).to.equal('successfully updated');
+        done();
+      });
+  });
+
+  it('should return a 200 status and the edited article', (done) => {
+    chai.request(app)
+      .patch('/api/v1/article/0/title/article')
+      .set('Authorization', token)
+      .send({
+        article : 'leleleleleleelelee',
+        title : 'je mange les bananes'
+      })
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(404);
+        expect(res.body.err).to.equal('article not found');
+        done();
+      });
+  });
+  it('should return 200 status when delete an article', (done) => {
+    chai.request(app)
+      .delete('/api/v1/article/1')
+      .set('Autorizatio', token)
+      .end((err, res) => {
+        console.log(res.body);
+        expect(res.status).to.equal(401);
+        done();
+      });
+  });
+  it('should successfully post a comment', (done) => {
+     chai.request(app)
+       .post('/api/v1/article/1/comments')
+      .set('Authorization', token)
+      .send({ artID: 1, comment: 'yyyyyyy' })
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(200);
+        done();
+      });
+  });
+  it('should successfully post a comment', (done) => {
+    chai.request(app)
+      .post('/api/v1/article/90/comments')
+     .set('Authorization', token)
+     .send({ artID: 1, comment: 'yyyyyyy' })
+     .end((err, res) => {
+       expect(res.body).to.be.an('object');
+       expect(res.status).to.equal(404);
+       done();
+     });
+ });
+  
+  it('should not delete an non iteger id', (done) => {
+    chai.request(app)
+      .delete('/api/v1/article/nn')
+      .set('Authorization', token)
+      .send(articles[4])
+      .end((_err, res) => {
+        expect(res.body.error).to.equal('please provide a valid, id cannot be a string value');
+        expect(res.status).to.equal(422);
+        done();
+      });
+  });
+ 
+  it('should delete an article', (done) => {
+    chai.request(app)
+      .delete('/api/v1/article/1')
+      .send(articles[5])
+      .set('Authorization', token)
+      .end((err, res) => {
+        expect(res.body.data).to.equal('Article successfully deleted');
+        expect(res.status).to.equal(200);
+        done();
+      });
+  });
 });
