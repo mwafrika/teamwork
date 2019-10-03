@@ -3,8 +3,8 @@ import chai, { expect } from 'chai';
 import chaihttp from 'chai-http';
 import chaiThings from 'chai-things';
 import should from 'should';
-import db from '../models/dB';
 import app from '../../index';
+import articles from './mockData/articleData';
 
 chai.use(chaihttp);
 chai.use(chaiThings);
@@ -16,15 +16,8 @@ let tokenAdmin;
 before((done) => {
   chai.request(app)
     .post('/api/v1/auth/signup')
-    .send({
-      email: 'mwafrikajosue@gmail.com',
-      password: '123',
-      firstName: 'jojo',
-      lastName: 'jack',
-      gender: 'male',
-      jobRole: 'IT',
-      department: 'IT',
-    })
+    .set('Authorization', 'application/json')
+    .send(articles[0])
     .end((err, res) => {
       token = res.body.token;
       console.log(res.body.token);
@@ -32,44 +25,48 @@ before((done) => {
     });
 });
 
-const data = {
-  id: 1,
-  title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
-  article: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  email: 'mwafrikajosue@gmail.com',
-};
-const emptyID = {
-  id: null,
-  title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
-  article: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  email: 'mwafrikajosue@gmail.com',
-};
-const emptyTitle = {
-  title: '',
-  article: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
-};
-const emptyArticle = {
-  title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
-  article: '',
-};
-const emptyComment = {
-  comment: '',
-  artID: 3,
-};
-const emptyArticl = {
-  comment: ' my darling',
-  artID: '',
-};
-const postComm = {
-  comment: 'my brother',
-  artID: 3,
-};
 
 describe('Articles', () => {
+  it('Should return an object with a message and 200 status when user accesses the root', (done) => {
+    chai.request(app)
+      .get('/')
+      .set('Authorization', 'application/json')
+      .end((err, res) => {
+        // if (err) done(err);
+        expect(res).to.have.status(200);
+        expect(res.body).to.be.an('object');
+        expect(res.body).to.have.property('message');
+        done();
+      });
+  });
+  it('Should return an error with 405 status when the user accesses a wrong endpoint', (done) => {
+    chai
+      .request(app)
+      .get('/vV')
+      .set('Authorization', 'application/json')
+      .end((err, res) => {
+        expect(res).to.have.status(405);
+        expect(res.body).to.be.an('object');
+        expect(res.body).to.have.property('message');
+        done();
+      });
+  });
+  it('Should return an html page with 200 status when users access api documentation', (done) => {
+    chai.request(app)
+      .get('/api/v1/api-docs/')
+      .set('Content-type', 'text/html')
+      .end((err, res) => {
+        if (err) done(err);
+        expect(res).to.have.status(200);
+        expect(res.headers['content-type']).to.equal('text/html; charset=utf-8');
+        done();
+      });
+  });
+
   it('should create an article', (done) => {
     chai.request(app)
       .post('/api/v1/article')
-      .send(data)
+      .send(articles[1])
       .set('Authorization', token)
       .end((request, response) => {
         response.body.should.have.property('status').equal(201);
@@ -77,18 +74,18 @@ describe('Articles', () => {
         response.body.should.have.property('data');
         expect(response.body.data).to.be.an('object');
         response.body.data.should.have.property('createdOn');
-        response.body.data.should.have.property('title').equal(data.title);
-        response.body.data.should.have.property('article').equal(data.article);
-        response.body.data.should.have.property('id').equal(data.id);
+        response.body.data.should.have.property('title').equal(articles[1].title);
+        response.body.data.should.have.property('article').equal(articles[1].article);
+        response.body.data.should.have.property('id').equal(articles[1].id);
 
-        response.body.data.should.have.property('email').equal(data.email);
+        response.body.data.should.have.property('email').equal(articles[1].email);
         done();
       });
   });
   it('should not post an article with no token', (done) => {
     chai.request(app)
       .post('/api/v1/article')
-      .send(data)
+      .send(articles[1])
       .set('Authorization', '')
       .end((err, res) => {
         expect(res.status).to.equal(401);
@@ -99,7 +96,7 @@ describe('Articles', () => {
   it('should not post article with empty title', (done) => {
     chai.request(app)
       .post('/api/v1/article')
-      .send(emptyTitle)
+      .send(articles[2])
       .set('Authorization', token)
       .end((err, res) => {
         expect(res.status).to.equal(400);
@@ -110,7 +107,7 @@ describe('Articles', () => {
   it('should not post with empty article', (done) => {
     chai.request(app)
       .post('/api/v1/article')
-      .send(emptyArticle)
+      .send(articles[3])
       .set('Authorization', token)
       .end((err, res) => {
         expect(res.status).to.equal(400);
@@ -121,7 +118,7 @@ describe('Articles', () => {
   it('should get all the articles', (done) => {
     chai.request(app)
       .get('/api/v1/article')
-      .send(data)
+      .send(articles[1])
       .set('Authorization', token)
       .end((err, res) => {
         expect(res.body).to.be.an('object');
@@ -131,7 +128,7 @@ describe('Articles', () => {
   it('should successfully get a specific article if the user is authenticated', (done) => {
     chai.request(app)
       .get('/api/v1/article/:id')
-      .send(data)
+      .send(articles[1])
       .set('Authorization', token)
       .end((err, res) => {
         expect(res.body).to.be.an('object');
@@ -142,7 +139,7 @@ describe('Articles', () => {
     chai.request(app)
       .get('/api/v1/article/:id')
       .set('Authorization', token)
-      .send({ id: 'y' })
+      .send(articles[3])
       .end((err, res) => {
         expect(res.body.error).to.equal('please provide a valid, id cannot be a string value');
         expect(res.status).to.equal(422);
@@ -153,8 +150,8 @@ describe('Articles', () => {
     chai.request(app)
       .delete('/api/v1/article/:id')
       .set('Authorization', token)
-      .send('g')
-      .end((err, res) => {
+      .send(articles[4])
+      .end((_err, res) => {
         expect(res.body.error).to.equal('please provide a valid, id cannot be a string value');
         expect(res.status).to.equal(422);
         done();
@@ -174,7 +171,7 @@ describe('Articles', () => {
     chai.request(app)
       .delete('/api/v1/article/:id')
       .set('Autorization', token)
-      .send({ data: '' })
+      .send(articles[5])
       .end((err, res) => {
         expect(res.body.error).to.equal('You must be logged in to use this route');
         expect(res.status).to.equal(401);
@@ -185,7 +182,7 @@ describe('Articles', () => {
     chai.request(app)
       .patch('/api/v1/article/:id/title/article')
       .set('Authorization', token)
-      .send({ id: 'u' })
+      .send(articles[6])
       .end((err, res) => {
         expect(res.status).to.equal(422);
         expect(res.body.error).to.equal('please enter a valid number');
@@ -196,7 +193,7 @@ describe('Articles', () => {
     chai.request(app)
       .patch('/api/v1/article/:id/title/article')
       .set('Authorization', token)
-      .send({ article: '' })
+      .send(articles[8])
       .end((err, res) => {
         expect(res.status).to.equal(400);
         expect(res.body.error).to.equal('article cannot be empty');
@@ -207,7 +204,7 @@ describe('Articles', () => {
     chai.request(app)
       .post('/api/v1/article/:artID/comments')
       .set('Authorization', token)
-      .send({ comment: '' })
+      .send(articles[9])
       .end((error, res) => {
         expect(res.body).to.be.an('object');
         expect(res.status).to.equal(400);
@@ -219,7 +216,7 @@ describe('Articles', () => {
     chai.request(app)
       .post('/api/v1/article/:artID/comments')
       .set('Authorization', token)
-      .send({ artID: 'y' })
+      .send()
       .end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.status).to.equal(422);

@@ -32,7 +32,6 @@ class userHelper {
       firstName: newUserInput.firstName,
       lastName: newUserInput.lastName,
       email: newUserInput.email,
-      isAdmin: newUserInput.isAdmin,
       jobRole: newUserInput.jobRole,
 
     };

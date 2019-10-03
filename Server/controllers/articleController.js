@@ -1,5 +1,5 @@
 import artService from '../services/articleService';
-import artHelper from "../helpers/articles";
+import artHelper from '../helpers/articles';
 import db from '../models/dB';
 
 const artController = {
@@ -22,7 +22,6 @@ const artController = {
   },
 
   getAll(req, res) {
-
     return artHelper.getAllarticle(res);
   },
   async getCategory(req, res) {
@@ -38,10 +37,10 @@ const artController = {
   async getSpecific(req, res) {
     // email of authenticated user
     const { id } = req.params;
-    const artid = parseInt(id,10);
+    const artid = parseInt(id, 10);
     const comment = db.comments.filter((com) => com.artID === artid);
-    const noComment =[];
-   let commToSend = comment.length>0?comment: noComment;
+    const noComment = [];
+    const commToSend = comment.length > 0 ? comment : noComment;
     const findArticle = await artService.getSpecific(id, commToSend);
     if (!findArticle) return res.status(404).send({ status: 'error', error: 'Article not found, please try another' });
 

@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cors());
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
   res.status(200).send({ status: 200, message: `Welcome to Teamwork!!! to access the swagger documentation for api version 1 please follow this link ${apiUrl} ` });
 });
 
@@ -33,7 +33,10 @@ app.use('/api/v1/api-docs', swagerUI.serve, swagerUI.setup(swagger));
 
 app.use(userRoute);
 app.use(articleRoutes);
-
+app.use('**', (req, res) => res.status(405).send({
+  status: 405,
+  message: `The requested resource was not found, Visit the documentation link ${apiUrl}`,
+}));
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`listening to the port ${port} ...`);
