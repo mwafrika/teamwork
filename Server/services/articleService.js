@@ -1,9 +1,5 @@
-/* eslint-disable max-len */
-/* eslint-disable eqeqeq */
 import article from '../models/dB';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import '@babel/polyfill';
-import comment1 from './commentService';
 
 class Articles {
   static postArticle(data) {
@@ -25,24 +21,27 @@ class Articles {
     return myCategory;
   }
 
-  static getSpecific(artID, userEmail, comment) {
-    const specific = article.articles.find(((art) => art.id == artID && art.email == userEmail));
-    const details = {
-      ...specific,
-      comment,
-    };
+  static getSpecific(artID, comment) {
+    const specific = article.articles.find(((art) => art.id == artID));
+    let details = false;
+    if (specific) {
+      details = {
+        ...specific,
+        comment,
+      };
+    }
+
     if (!details) return false;
     return details;
   }
 
   static deleteArticle(id, email) {
-    const findArticle = article.articles.findIndex(((art) => art.id == id && art.email == email));
-    if (findArticle === -1 || !findArticle) return false;
+    const findArticle = article.articles.find(((art) => art.id == id && art.email == email));
+    if (!findArticle) return false;
     return article.articles.splice(findArticle, 1);
   }
 
   static editArticles(userEmail, articleID, articl, title) {
-    // eslint-disable-next-line max-len
     const findArt = article.articles.find(((art) => art.email == userEmail && art.id == articleID));
     if (!findArt) return false;
     const artIndex = article.articles.indexOf(findArt);

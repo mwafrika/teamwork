@@ -16,7 +16,6 @@ class ValidateInfo {
     if (Validator.checkEmpty(gender)) return resp('gender cannot be empty', 400);
     if (Validator.checkEmpty(department)) return resp('department cannot be empty', 400);
 
-    // verify for valid information
     if (!Validator.isEmail(email)) return resp('email is not valid', 422);
     if (Validator.isNotNumber(firstName)) return resp('first name cannot contain numbers', 422);
     if (Validator.isNotNumber(lastName)) return resp('last name cannot contain numbers', 422);
@@ -35,11 +34,13 @@ class ValidateInfo {
   }
 
   static createArticle(req, res, next) {
-    const { title, article } = req.body;
+    const { title, article} = req.body;
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(title)) return response('title cannot be empty', 400);
     if (Validator.checkEmpty(article)) return response('article cannot be empty', 400);
-
+    if (!isNaN(article)) return response('article cannot be a number', 422);
+    if (!isNaN(title)) return response('title cannot be a number', 422);
+   
     return next();
   }
 
@@ -81,6 +82,5 @@ class ValidateInfo {
     if (!isString(category)) return response('category must be a string', 400);
     return next();
   }
-
 }
 export default ValidateInfo;

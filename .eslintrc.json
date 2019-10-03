@@ -15,10 +15,12 @@
     "rules": {
        "linebreak-style": 0,
        "consistent-return": 0,
-       "no-unused-vars": 0,
+       "no-unused-vars": 1,
        "radix": 0,
        "no-undef": 0,
        "indent": ["error", 2],
-       "no-console":0
+       "no-console":0,
+       "code":300
     }
+
 }

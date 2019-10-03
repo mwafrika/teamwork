@@ -5,7 +5,6 @@ class userHelper {
   static signup(userData) {
     if (db.users.find((item) => item.email === userData.email)) return false;
     const newUser = new Service();
-
     newUser.firstName = userData.firstName;
     newUser.lastName = userData.lastName;
     newUser.email = userData.email;
@@ -14,7 +13,7 @@ class userHelper {
     newUser.department = userData.department;
     newUser.jobRole = userData.jobRole;
     newUser.isAdmin = userData.isAdmin;
-
+    
     const newUserInput = {
       id: db.users.length + 1,
       firstName: newUser.firstName,
@@ -33,12 +32,14 @@ class userHelper {
       firstName: newUserInput.firstName,
       lastName: newUserInput.lastName,
       email: newUserInput.email,
-      password: newUserInput.password,
-      isAdmin: newUserInput.isAdmin,
       jobRole: newUserInput.jobRole,
 
     };
     return userDetails;
+  }
+  static isUserExist(userId){
+    const findUser = db.users.find(((user) => user.id === userId));
+    return findUser;
   }
 
   static signin(userData) {
@@ -47,9 +48,9 @@ class userHelper {
     if (!findUser) return false;
     const userExist = {
       id: findUser.id,
+      firstName: findUser.firsName,
+      lastName: findUser.lastName,
       email: findUser.email,
-      password: findUser.password,
-      isAdmin: findUser.isAdmin,
     };
     return userExist;
   }

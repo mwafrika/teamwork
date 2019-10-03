@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import userHelper from '../services/userService';
@@ -17,7 +16,10 @@ class userController {
     }
     return jwt.sign(signup, process.env.JWT_SECRET, (err, token) => {
       res.status(201).send({
+        status: 201,
+        message: 'User account successfully created',
         token,
+        data: signup,
       });
     });
   }
@@ -26,14 +28,18 @@ class userController {
     const user = req.body;
     const myUsers = userHelper.signin(user);
     if (!myUsers) {
-      res.status(404).send({
-        status: 'error',
-        error: 'invalid credentials!!! no user exist',
+      res.status(401).send({
+        status: '401',
+        error: 'invalid credentials!!',
       });
     }
-    return jwt.sign(myUsers, process.env.JWT_SECRET, (err, token) => {
+    return jwt.sign(myUsers, process.
+      env.JWT_SECRET, (err, token) => {
       res.status(200).send({
+        status: 200,
+        message: 'successfully logged in',
         token,
+        data: myUsers,
       });
     });
   }

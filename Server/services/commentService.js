@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import article from '../models/dB';
 
 class postComment {
@@ -15,7 +14,6 @@ class postComment {
     };
 
     article.comments.push(newComment);
-    console.log(newComment);
     return newComment;
   }
 }
