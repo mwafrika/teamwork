@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import userHelper from '../services/userService';
@@ -16,7 +15,6 @@ class userController {
       });
     }
     return jwt.sign(signup, process.env.JWT_SECRET, (err, token) => {
-      // console.log(signup);
       res.status(201).send({
         status: 201,
         message: 'User account successfully created',

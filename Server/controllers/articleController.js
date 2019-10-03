@@ -36,7 +36,6 @@ const artController = {
     });
   },
   async getSpecific(req, res) {
-    // email of authenticated user
     const { id } = req.params;
     const artid = parseInt(id, 10);
     const comment = db.comments.filter((com) => com.artID === artid);
@@ -48,7 +47,6 @@ const artController = {
     return res.status(200).send({
       status: 200,
       data: findArticle,
-      // comment,
     });
   },
   async deleteArticle(req, res) {

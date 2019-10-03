@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import article from '../models/dB';
 
 class postComment {

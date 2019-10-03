@@ -40,7 +40,6 @@ class userHelper {
 
   static signin(userData) {
     const allData = db.users;
-    // eslint-disable-next-line max-len
     const findUser = allData.find(((user) => user.email === userData.email && user.password === userData.password));
     if (!findUser) return false;
     const userExist = {

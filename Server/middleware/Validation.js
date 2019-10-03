@@ -16,7 +16,6 @@ class ValidateInfo {
     if (Validator.checkEmpty(gender)) return resp('gender cannot be empty', 400);
     if (Validator.checkEmpty(department)) return resp('department cannot be empty', 400);
 
-    // verify for valid information
     if (!Validator.isEmail(email)) return resp('email is not valid', 422);
     if (Validator.isNotNumber(firstName)) return resp('first name cannot contain numbers', 422);
     if (Validator.isNotNumber(lastName)) return resp('last name cannot contain numbers', 422);
@@ -81,6 +80,5 @@ class ValidateInfo {
     if (!isString(category)) return response('category must be a string', 400);
     return next();
   }
-
 }
 export default ValidateInfo;

@@ -1,7 +1,4 @@
-/* eslint-disable max-len */
-/* eslint-disable eqeqeq */
 import article from '../models/dB';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import '@babel/polyfill';
 
 class Articles {
@@ -46,7 +43,6 @@ class Articles {
   }
 
   static editArticles(userEmail, articleID, articl, title) {
-    // eslint-disable-next-line max-len
     const findArt = article.articles.find(((art) => art.email == userEmail && art.id == articleID));
     if (!findArt) return false;
     const artIndex = article.articles.indexOf(findArt);

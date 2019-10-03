@@ -19,6 +19,8 @@
        "radix": 0,
        "no-undef": 0,
        "indent": ["error", 2],
-       "no-console":0
+       "no-console":0,
+       "code":300
     }
+
 }
