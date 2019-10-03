@@ -15,12 +15,12 @@ const articles = [
     email: 'mwafrikajosue@gmail.com',
   },
   {
-    title: '',
+    title: ' ',
     article: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
   },
   {
     title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
-    article: '',
+    article: ' ',
   },
   { id: 'y' },
   { data: 'g' },
@@ -33,6 +33,11 @@ const articles = [
     title: 'je mange les bananes',
   },
   { artID: 1, comment: 'yyyyyyy' },
-  
+  { article: 123,
+    title:'jjjjii'
+  },
+  // { article:'jiiijk',
+  //   title: 1234 
+  // }
 ];
 export default articles;

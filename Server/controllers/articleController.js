@@ -52,7 +52,7 @@ const artController = {
     const { id } = req.params;
     const { email } = req.user;
     const findArticle = await artService.deleteArticle(parseInt(id, 10), email);
-    if (findArticle === -1 || !findArticle) return res.status(404).send({ status: 404, error: 'Article not found' });
+    if (findArticle === -1) return res.status(404).send({ status: 404, error: 'Article not found' });
     return res.status(200).send({
       status: 200,
       data: 'Article successfully deleted',

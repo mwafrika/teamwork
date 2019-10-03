@@ -33,7 +33,8 @@ class userController {
         error: 'invalid credentials!!',
       });
     }
-    return jwt.sign(myUsers, process.env.JWT_SECRET, (err, token) => {
+    return jwt.sign(myUsers, process.
+      env.JWT_SECRET, (err, token) => {
       res.status(200).send({
         status: 200,
         message: 'successfully logged in',

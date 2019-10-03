@@ -34,11 +34,13 @@ class ValidateInfo {
   }
 
   static createArticle(req, res, next) {
-    const { title, article } = req.body;
+    const { title, article} = req.body;
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(title)) return response('title cannot be empty', 400);
     if (Validator.checkEmpty(article)) return response('article cannot be empty', 400);
-
+    if (!isNaN(article)) return response('article cannot be a number', 422);
+    if (!isNaN(title)) return response('title cannot be a number', 422);
+   
     return next();
   }
 

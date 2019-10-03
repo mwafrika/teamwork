@@ -1,2 +1,4 @@
 service_name: travis-pro
 repo_token: qtXydlJPagfXtI8N9OIMV8G5CyxNYocXD
+exclude_patterns:
+- "teamwork/Server/test"

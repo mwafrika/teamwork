@@ -92,28 +92,39 @@ describe('Articles', () => {
         done();
       });
   });
-  it('should not post article with empty title', (done) => {
+  it('should not post an article containing numbers', (done) => {
     chai.request(app)
       .post('/api/v1/article')
-      .send(articles[2])
-      .set('Authorization', token)
+      .send(articles[12])
+      .set('Authorization',token)
       .end((err, res) => {
-        expect(res.status).to.equal(400);
-        expect(res.body.error).to.equal('title cannot be empty');
+        expect(res.status).to.equal(422);
+        expect(res.body.error).to.equal('article cannot be a number');
         done();
       });
   });
-  it('should not post with empty article', (done) => {
-    chai.request(app)
-      .post('/api/v1/article')
-      .send(articles[3])
-      .set('Authorization', token)
-      .end((err, res) => {
-        expect(res.status).to.equal(400);
-        expect(res.body.error).to.equal('article cannot be empty');
-        done();
-      });
-  });
+  // it('should not post article with empty title', (done) => {
+  //   chai.request(app)
+  //     .post('/api/v1/article')
+  //     .send(articles[2])
+  //     .set('Authorization', token)
+  //     .end((err, res) => {
+  //       expect(res.status).to.equal(400);
+  //       expect(res.body.error).to.equal('title cannot be empty');
+  //       done();
+  //     });
+  // });
+  // it('should not post with empty article', (done) => {
+  //   chai.request(app)
+  //     .post('/api/v1/article')
+  //     .send({title:'hhhhhhh',article:' ',category:'education'})
+  //     .set('Authorization', token)
+  //     .end((err, res) => {
+  //       expect(res.status).to.equal(400);
+  //       expect(res.body.error).to.equal('article cannot be empty');
+  //       done();
+  //     });
+  // });
   it('should get all the articles', (done) => {
     chai.request(app)
       .get('/api/v1/article')

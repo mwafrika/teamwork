@@ -37,7 +37,7 @@ app.use('**', (req, res) => res.status(405).send({
   status: 405,
   message: `The requested resource was not found, Visit the documentation link ${apiUrl}`,
 }));
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`listening to the port ${port} ...`);
 });

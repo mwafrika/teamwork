@@ -37,6 +37,10 @@ class userHelper {
     };
     return userDetails;
   }
+  static isUserExist(userId){
+    const findUser = db.users.find(((user) => user.id === userId));
+    return findUser;
+  }
 
   static signin(userData) {
     const allData = db.users;
