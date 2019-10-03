@@ -47,7 +47,6 @@ describe('User should be able to signup', () => {
       .send(mockUser.signup[0])
       .end((err, res) => {
         expect(res.body).to.be.a('object');
-        console.log(res.status);
         expect(res.status).to.equal(201);
         expect(res.body.data).to.have.keys(['id', 'firstName', 'lastName', 'email', 'jobRole']);
         done();
@@ -195,7 +194,6 @@ describe('should be able to signin', () => {
         expect(res.body).to.be.an('object');
         expect(res.status).to.equal(200);
         expect(res.body.data).to.have.key(['id', 'lastName', 'email']);
-        console.log(res.body);
         done();
       });
   });

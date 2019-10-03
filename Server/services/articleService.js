@@ -37,7 +37,6 @@ class Articles {
 
   static deleteArticle(id, email) {
     const findArticle = article.articles.find(((art) => art.id == id && art.email == email));
-    console.log(findArticle);
     if (!findArticle) return false;
     return article.articles.splice(findArticle, 1);
   }

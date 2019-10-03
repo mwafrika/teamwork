@@ -36,7 +36,7 @@ class userController {
     return jwt.sign(myUsers, process.env.JWT_SECRET, (err, token) => {
       res.status(200).send({
         status: 200,
-        myUsers: 'successfully logged in',
+        message: 'successfully logged in',
         token,
         data: myUsers,
       });

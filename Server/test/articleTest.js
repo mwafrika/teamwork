@@ -20,7 +20,6 @@ before((done) => {
     .send(articles[0])
     .end((err, res) => {
       token = res.body.token;
-      console.log(res.body.token);
       done();
     });
 });

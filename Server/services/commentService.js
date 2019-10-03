@@ -14,7 +14,6 @@ class postComment {
     };
 
     article.comments.push(newComment);
-    console.log(newComment);
     return newComment;
   }
 }

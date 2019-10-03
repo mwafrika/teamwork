@@ -22,7 +22,6 @@ const artController = {
   },
 
   getAll(req, res) {
-    console.log(getAllarticle(res));
     return artHelper.getAllarticle(res);
   },
   async getCategory(req, res) {
