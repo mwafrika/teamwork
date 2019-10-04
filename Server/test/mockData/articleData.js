@@ -10,10 +10,18 @@ const articles = [
   },
   {
     id: 1,
-    title: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
-    article: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    email: 'mwafrikajosue@gmail.com',
+    createdOn: '10/4/2019, 7:34:29 AM',
+    title: 'never die ree',
+    article: 'The best of century',
+    category: 'education',
+    author: {
+        email: 'mwafrika1@gmail.com',
+        firstName: 'jiji',
+        lastName: 'josue'
+    }
+
   },
+  
   {
     title: ' ',
     article: 'Eget duis at tellus at urna condimentum mattis pellentesque id',
