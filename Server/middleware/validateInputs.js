@@ -14,9 +14,6 @@ class Validate {
   }
 
   static checkEmpty(input) {
-    // const empty = input.trim();
-    // if(empty.length<1) return true;
-    // return false;
     const re = /^$/;
     const testBody = re.test(input);
     return testBody;

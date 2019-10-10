@@ -2,11 +2,11 @@ import commentService from '../services/commentService';
 
 const commentControl = {
 
-  async postComment(req, res) {
+   postComment(req, res) {
     const { params } = req;
     const { comment } = req.body;
 
-    const comm = await commentService(params, comment);
+    const comm = commentService(params, comment);
     if (!comm) {
       return res.status(404).send({ status: 404, error: 'Article not found' });
     }

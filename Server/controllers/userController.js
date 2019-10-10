@@ -26,7 +26,7 @@ class userController {
 
   static SigninUser(req, res) {
     const user = req.body;
-    const myUsers = userHelper.signin(user);
+   const myUsers = userHelper.signin(user);
     if (!myUsers) {
       res.status(401).send({
         status: '401',

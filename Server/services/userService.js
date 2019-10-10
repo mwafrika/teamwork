@@ -27,7 +27,7 @@ class userHelper {
     };
     db.users.push(newUserInput);
 
-    const userDetails = {
+ const userDetails = {
       id: newUserInput.id,
       firstName: newUserInput.firstName,
       lastName: newUserInput.lastName,

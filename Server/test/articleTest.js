@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import chai, { expect } from 'chai';
 import chaihttp from 'chai-http';
 import chaiThings from 'chai-things';
@@ -31,7 +30,6 @@ describe('Articles', () => {
       .get('/')
       .set('Authorization', token)
       .end((err, res) => {
-        // if (err) done(err);
         expect(res).to.have.status(200);
         expect(res.body).to.be.an('object');
         expect(res.body).to.have.property('message');
@@ -76,8 +74,11 @@ describe('Articles', () => {
         response.body.data.should.have.property('title').equal(articles[1].title);
         response.body.data.should.have.property('article').equal(articles[1].article);
         response.body.data.should.have.property('id').equal(articles[1].id);
-
-        response.body.data.should.have.property('email').equal(articles[1].email);
+        response.body.data.should.have.property('category').equal(articles[1].category);
+        // expect(response.body.data.author).to.be.an('object').equal(articles[1].author);
+        expect(response.body.author).to.have.property('email').equal(articles[1].author.email);
+        expect(response.body.data.author).to.have.property('firstName').equal(articles[1].author.firstName);
+        expect(response.body.data.author).to.have.property('lastName').equal(articles[1].author.lastName);
         done();
       });
   });
@@ -103,28 +104,7 @@ describe('Articles', () => {
         done();
       });
   });
-  // it('should not post article with empty title', (done) => {
-  //   chai.request(app)
-  //     .post('/api/v1/article')
-  //     .send(articles[2])
-  //     .set('Authorization', token)
-  //     .end((err, res) => {
-  //       expect(res.status).to.equal(400);
-  //       expect(res.body.error).to.equal('title cannot be empty');
-  //       done();
-  //     });
-  // });
-  // it('should not post with empty article', (done) => {
-  //   chai.request(app)
-  //     .post('/api/v1/article')
-  //     .send({title:'hhhhhhh',article:' ',category:'education'})
-  //     .set('Authorization', token)
-  //     .end((err, res) => {
-  //       expect(res.status).to.equal(400);
-  //       expect(res.body.error).to.equal('article cannot be empty');
-  //       done();
-  //     });
-  // });
+
   it('should get all the articles', (done) => {
     chai.request(app)
       .get('/api/v1/article')

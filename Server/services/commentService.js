@@ -7,6 +7,7 @@ class postComment {
 
     if (!findArt) return false;
     const newComment = {
+      artID: artID,
       title: findArt.title,
       article: findArt.article,
       comment: comment,
